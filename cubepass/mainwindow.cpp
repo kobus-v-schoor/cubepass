@@ -38,6 +38,7 @@ void MainWindow::ReLogin()
 void MainWindow::UpdateCategories()
 {
     ui->cmbCategory->clear();
+    ui->cmbCategory->addItem("All");
     std::string catVar = _datFile.ReturnVar(_username, "Categories");
     if (catVar == "empty")
         catVar.clear();
@@ -52,7 +53,6 @@ void MainWindow::UpdateCategories()
     }
 }
 
-
 void MainWindow::UpdateItems()
 {
     ui->lstItems->clear();
@@ -66,6 +66,14 @@ void MainWindow::UpdateItems()
         for (; (i < itemsVar.size()) && (itemsVar[i] != ';'); i++)
             temp += itemsVar[i];
 
-        ui->lstItems->addItem(temp.c_str());
+        if (ui->cmbCategory->currentText() == "All")
+            ui->lstItems->addItem(temp.c_str());
+        else
+        {
+            if (ui->cmbCategory->currentText().toStdString() ==
+                    _datFile.ReturnVar(_username + "/" + temp, "Category"))
+                ui->lstItems->addItem(temp);
+        }
     }
 }
+

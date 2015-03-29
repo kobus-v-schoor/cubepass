@@ -14,16 +14,19 @@ TEMPLATE = app
 SOURCES += main.cpp\
         loginscreen.cpp \
     createuser.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    newitem.cpp
 
 HEADERS  += loginscreen.h \
     stdafx.h \
     createuser.h \
-    mainwindow.h
+    mainwindow.h \
+    newitem.h
 
 FORMS    += loginscreen.ui \
     createuser.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    newitem.ui
 
 
 unix:!macx: LIBS += -L$$PWD/../../../../../usr/local/bin/cube-lib/ -lcube-lib

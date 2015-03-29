@@ -1,8 +1,8 @@
 #Info about software
 
 [Startup]
-firststart=true
-version=versionnumber
+FirstStart=true
+Version=versionnumber
 
 [Users]
 username=password
