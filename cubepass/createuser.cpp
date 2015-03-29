@@ -4,11 +4,12 @@
 CreateUser::CreateUser(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateUser),
-    _iniFile("settings.ini"),
-    _datFile("usersdata.dat")
+    _iniFile(SETTINGS_FILE),
+    _datFile(DAT_FILE)
 {
     ui->setupUi(this);
     ui->lblWarning->hide();
+    this->on_edtUsername_textChanged("");
 }
 
 CreateUser::~CreateUser()
@@ -23,7 +24,33 @@ void CreateUser::on_btnCancel_clicked()
 
 void CreateUser::on_btnCreate_clicked()
 {
-    //
+    std::string username = ui->edtUsername->text().toStdString();
+    std::string password = ui->edtPassword->text().toStdString();
+    std::string message;
+    if (_iniFile.AddProperty("Users", username, cube::Encryption(password, password)))
+    {
+        _datFile.CreateSection(username);
+        _datFile.CreateVar(username, "Categories");
+        _datFile.CreateVar(username, "Items");
+
+        message = "User " + username + " successfully created.";
+        QMessageBox msgB(QMessageBox::Information, "User created", message.c_str(),
+                         QMessageBox::Ok);
+        msgB.exec();
+        _iniFile.ApplyChanges();
+        _datFile.ApplyChanges();
+        this->close();
+    }
+    else
+    {
+        message = "The user \"" + username + "\" already exists. Please choose another "
+                "username.";
+        QMessageBox msgB(QMessageBox::Warning, "User exists", message.c_str(),
+                         QMessageBox::Ok);
+        msgB.exec();
+        ui->edtUsername->clear();
+        ui->edtUsername->setFocus();
+    }
 }
 
 void CreateUser::on_edtPassword_textChanged(const QString &arg1)
@@ -43,14 +70,11 @@ void CreateUser::on_edtCPword_textChanged(const QString &arg1)
 {
     if ((ui->edtPassword->text().length() - ui->edtCPword->text().length()) <= 3)
     {
-        if (ui->edtPassword->text() != ui->edtCPword->text())
-            ui->lblWarning->setVisible(true);
-        else
-        {
-            ui->lblWarning->setVisible(false);
-            ui->btnCreate->setEnabled(true);
-        }
+        ui->lblWarning->setVisible(ui->edtPassword->text() != ui->edtCPword->text());
+        ui->btnCreate->setEnabled(!(ui->edtPassword->text() != ui->edtCPword->text()));
     }
+    else
+        ui->lblWarning->hide();
 }
 
 void CreateUser::on_edtUsername_textChanged(const QString &arg1)

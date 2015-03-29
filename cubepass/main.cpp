@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    cube::iniParser _iniFile("settings.ini");
-    cube::dataBase _datFile("userdata.dat");
+    cube::iniParser _iniFile(SETTINGS_FILE);
+    cube::dataBase _datFile(DAT_FILE);
 
     if (!_iniFile.IsParsed())
     {
@@ -37,12 +37,14 @@ int main(int argc, char *argv[])
 
     if (ONWIN)
     {
-        QMessageBox msgB(QMessageBox::Information, "Permissions needed", "I detected that your runnig Windows. "
+        QMessageBox msgB(QMessageBox::Information, "Permissions needed", "I detected that your running Windows. "
                          "Because of this, especially if you're runnig Win 8, you need to run this program "
                          "with admin rights. If not, this program will not be able to save any of its data. "
                          "To do this, simply right-click on the shortcut and click \"Run as administrator\".",
                          QMessageBox::Ok);
         msgB.exec();
+        _iniFile.ChangeProperty("Startup", "FirstStart", "false");
+        _iniFile.ApplyChanges();
         return 0;
     }
 

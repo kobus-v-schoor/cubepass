@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "stdafx.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,8 +20,11 @@ private:
     Ui::MainWindow *ui;
     std::string _username;
     std::string _password;
+    cube::dataBase _datFile;
 
     void ReLogin();
+    void UpdateCategories();
+    void UpdateItems();
 };
 
 #endif // MAINWINDOW_H

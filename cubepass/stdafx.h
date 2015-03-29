@@ -9,3 +9,7 @@
 
 //Qt includes
 #include <QMessageBox>
+
+//Global declares
+#define SETTINGS_FILE "settings.ini"
+#define DAT_FILE "usersdata.dat"
