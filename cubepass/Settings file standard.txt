@@ -1,0 +1,8 @@
+#Info about software
+
+[Startup]
+firststart=true
+version=versionnumber
+
+[Users]
+username=password

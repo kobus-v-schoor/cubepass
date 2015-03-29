@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    std::string _username;
+    std::string _password;
+
+    void ReLogin();
 };
 
 #endif // MAINWINDOW_H

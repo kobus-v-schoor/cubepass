@@ -1,4 +1,11 @@
-#ifndef STDAFX_H
-#define STDAFX_H
+#pragma once
 
-#endif // STDAFX_H
+//System includes
+#include <string>
+#include <vector>
+
+//cube-lib includes
+#include "cube-lib.h"
+
+//Qt includes
+#include <QMessageBox>
