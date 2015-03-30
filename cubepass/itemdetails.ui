@@ -105,6 +105,9 @@
        <property name="text">
         <string>Edit</string>
        </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -113,7 +116,7 @@
         <string>Done</string>
        </property>
        <property name="default">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>

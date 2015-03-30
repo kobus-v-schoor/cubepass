@@ -56,7 +56,6 @@ void ItemDetails::on_btnEdit_clicked()
         ui->cmbCategory->setEnabled(true);
         ui->btnEdit->setText("Save changes");
         ui->btnDone->setText("Delete");
-
         return;
     }
 
@@ -151,4 +150,25 @@ void ItemDetails::on_btnDone_clicked()
             this->close();
         }
     }
+}
+
+void ItemDetails::on_edtItemName_textChanged(const QString &arg1)
+{
+    ui->btnEdit->setEnabled(!(ui->edtItemName->text().isEmpty() ||
+                            ui->edtUsername->text().isEmpty() ||
+                            ui->edtPassword->text().isEmpty()));
+}
+
+void ItemDetails::on_edtUsername_textChanged(const QString &arg1)
+{
+    ui->btnEdit->setEnabled(!(ui->edtItemName->text().isEmpty() ||
+                            ui->edtUsername->text().isEmpty() ||
+                            ui->edtPassword->text().isEmpty()));
+}
+
+void ItemDetails::on_edtPassword_textChanged(const QString &arg1)
+{
+    ui->btnEdit->setEnabled(!(ui->edtItemName->text().isEmpty() ||
+                            ui->edtUsername->text().isEmpty() ||
+                            ui->edtPassword->text().isEmpty()));
 }

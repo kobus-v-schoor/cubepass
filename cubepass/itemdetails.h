@@ -24,6 +24,12 @@ private slots:
 
     void on_btnDone_clicked();
 
+    void on_edtItemName_textChanged(const QString &arg1);
+
+    void on_edtUsername_textChanged(const QString &arg1);
+
+    void on_edtPassword_textChanged(const QString &arg1);
+
 private:
     Ui::ItemDetails *ui;
     std::string _username;
