@@ -24,6 +24,8 @@ private slots:
 
     void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_btnManageCt_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::string _username;

@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include "newitem.h"
 #include "itemdetails.h"
+#include "categorymanager.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -99,5 +100,14 @@ void MainWindow::on_lstItems_itemDoubleClicked(QListWidgetItem *item)
     ItemDetails newDetails(item->text().toStdString(), _username, _password);
     newDetails.exec();
 
+    this->UpdateItems();
+}
+
+void MainWindow::on_btnManageCt_clicked()
+{
+    CategoryManager newMan(_username);
+    newMan.exec();
+
+    this->UpdateCategories();
     this->UpdateItems();
 }

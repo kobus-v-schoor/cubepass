@@ -16,20 +16,23 @@ SOURCES += main.cpp\
     createuser.cpp \
     mainwindow.cpp \
     newitem.cpp \
-    itemdetails.cpp
+    itemdetails.cpp \
+    categorymanager.cpp
 
 HEADERS  += loginscreen.h \
     stdafx.h \
     createuser.h \
     mainwindow.h \
     newitem.h \
-    itemdetails.h
+    itemdetails.h \
+    categorymanager.h
 
 FORMS    += loginscreen.ui \
     createuser.ui \
     mainwindow.ui \
     newitem.ui \
-    itemdetails.ui
+    itemdetails.ui \
+    categorymanager.ui
 
 
 unix:!macx: LIBS += -L$$PWD/../../../../../usr/local/bin/cube-lib/ -lcube-lib
