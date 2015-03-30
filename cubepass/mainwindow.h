@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "stdafx.h"
+#include <QListWidgetItem>
 
 namespace Ui {
 class MainWindow;

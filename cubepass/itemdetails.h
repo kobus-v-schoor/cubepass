@@ -17,12 +17,20 @@ public:
                          std::string password);
     ~ItemDetails();
 
+private slots:
+    void on_chckShowPword_toggled(bool checked);
+
+    void on_btnEdit_clicked();
+
+    void on_btnDone_clicked();
+
 private:
     Ui::ItemDetails *ui;
     std::string _username;
     std::string _password;
     std::string _itemName;
     cube::dataBase _datFile;
+    bool _editing;
 };
 
 #endif // ITEMDETAILS_H

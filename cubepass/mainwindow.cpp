@@ -2,6 +2,7 @@
 #include "loginscreen.h"
 #include "ui_mainwindow.h"
 #include "newitem.h"
+#include "itemdetails.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -95,5 +96,8 @@ void MainWindow::on_cmbCategory_currentIndexChanged(int index)
 
 void MainWindow::on_lstItems_itemDoubleClicked(QListWidgetItem *item)
 {
+    ItemDetails newDetails(item->text().toStdString(), _username, _password);
+    newDetails.exec();
 
+    this->UpdateItems();
 }
