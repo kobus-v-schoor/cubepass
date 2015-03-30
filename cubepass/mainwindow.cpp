@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "loginscreen.h"
 #include "ui_mainwindow.h"
+#include "newitem.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -72,8 +73,16 @@ void MainWindow::UpdateItems()
         {
             if (ui->cmbCategory->currentText().toStdString() ==
                     _datFile.ReturnVar(_username + "/" + temp, "Category"))
-                ui->lstItems->addItem(temp);
+                ui->lstItems->addItem(temp.c_str());
         }
     }
+}
+
+void MainWindow::on_btnNewItem_clicked()
+{
+    NewItem newItem;
+    newItem.exec();
+
+    this->UpdateItems();
 }
 

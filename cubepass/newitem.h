@@ -15,6 +15,17 @@ public:
     explicit NewItem(QWidget *parent = 0);
     ~NewItem();
 
+private slots:
+    void on_edtItemName_textChanged(const QString &arg1);
+
+    void on_edtUsername_textChanged(const QString &arg1);
+
+    void on_edtPassword_textChanged(const QString &arg1);
+
+    void on_edtCPassword_textChanged(const QString &arg1);
+
+    void on_chckShowPword_toggled(bool checked);
+
 private:
     Ui::NewItem *ui;
 };

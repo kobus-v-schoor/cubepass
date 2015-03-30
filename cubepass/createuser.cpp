@@ -71,10 +71,13 @@ void CreateUser::on_edtCPword_textChanged(const QString &arg1)
     if ((ui->edtPassword->text().length() - ui->edtCPword->text().length()) <= 3)
     {
         ui->lblWarning->setVisible(ui->edtPassword->text() != ui->edtCPword->text());
-        ui->btnCreate->setEnabled(!(ui->edtPassword->text() != ui->edtCPword->text()));
+        ui->btnCreate->setEnabled(ui->edtPassword->text() == ui->edtCPword->text());
     }
     else
+    {
         ui->lblWarning->hide();
+        ui->btnCreate->setEnabled(false);
+    }
 }
 
 void CreateUser::on_edtUsername_textChanged(const QString &arg1)
