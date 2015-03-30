@@ -40,6 +40,7 @@ void MainWindow::UpdateCategories()
 {
     ui->cmbCategory->clear();
     ui->cmbCategory->addItem("All");
+    this->_datFile.Reparse();
     std::string catVar = _datFile.ReturnVar(_username, "Categories");
     if (catVar == "empty")
         catVar.clear();
@@ -57,6 +58,7 @@ void MainWindow::UpdateCategories()
 void MainWindow::UpdateItems()
 {
     ui->lstItems->clear();
+    this->_datFile.Reparse();
     std::string itemsVar = _datFile.ReturnVar(_username, "Items");
     if (itemsVar == "empty")
         itemsVar.clear();
@@ -80,9 +82,18 @@ void MainWindow::UpdateItems()
 
 void MainWindow::on_btnNewItem_clicked()
 {
-    NewItem newItem;
+    NewItem newItem(_username, _password);
     newItem.exec();
 
     this->UpdateItems();
 }
 
+void MainWindow::on_cmbCategory_currentIndexChanged(int index)
+{
+    this->UpdateItems();
+}
+
+void MainWindow::on_lstItems_itemDoubleClicked(QListWidgetItem *item)
+{
+
+}

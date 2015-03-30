@@ -19,6 +19,10 @@ public:
 private slots:
     void on_btnNewItem_clicked();
 
+    void on_cmbCategory_currentIndexChanged(int index);
+
+    void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
     std::string _username;
