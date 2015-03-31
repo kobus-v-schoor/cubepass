@@ -17,7 +17,7 @@ ItemDetails::ItemDetails(std::string itemName, std::string username, std::string
     ui->edtPassword->setText(cube::Decryption(_datFile.ReturnVar(sectionName, "Password"), _password).c_str());
     std::string _categories = _datFile.ReturnVar(_username, "Categories");
     if (_categories == "empty")
-        _categories.empty();
+        _categories.clear();
 
     ui->cmbCategory->addItem("None");
     for (int i = 0; i < _categories.size(); i++)
