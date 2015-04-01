@@ -11,6 +11,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = cubepass
 TEMPLATE = app
 
+CONFIG += c++11
+
+INCLUDEPATH += "/home/cube/repos/cube-lib/include"
+SOURCES += "/home/cube/repos/cube-lib/src/cube-lib-main.cpp" \
+    deleteaccount.cpp
+
 SOURCES += main.cpp\
         loginscreen.cpp \
     createuser.cpp \
@@ -25,17 +31,13 @@ HEADERS  += loginscreen.h \
     mainwindow.h \
     newitem.h \
     itemdetails.h \
-    categorymanager.h
+    categorymanager.h \
+    deleteaccount.h
 
 FORMS    += loginscreen.ui \
     createuser.ui \
     mainwindow.ui \
     newitem.ui \
     itemdetails.ui \
-    categorymanager.ui
-
-
-unix:!macx: LIBS += -L$$PWD/../../../../../usr/local/bin/cube-lib/ -lcube-lib
-
-INCLUDEPATH += $$PWD/../../../../../usr/local/include/cube-lib
-DEPENDPATH += $$PWD/../../../../../usr/local/include/cube-lib
+    categorymanager.ui \
+    deleteaccount.ui

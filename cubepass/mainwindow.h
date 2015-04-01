@@ -19,12 +19,11 @@ public:
 
 private slots:
     void on_btnNewItem_clicked();
-
     void on_cmbCategory_currentIndexChanged(int index);
-
     void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
-
     void on_btnManageCt_clicked();
+    void on_actionLogout_triggered();
+    void on_actionDelete_this_account_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -23,8 +23,6 @@ private slots:
 
     void on_edtPassword_textChanged(const QString &arg1);
 
-    void on_edtCPassword_textChanged(const QString &arg1);
-
     void on_chckShowPword_toggled(bool checked);
 
     void on_btnCancel_clicked();
@@ -36,6 +34,8 @@ private:
     cube::dataBase _datFile;
     std::string _username;
     std::string _password;
+
+    void updateBtnCreate();
 };
 
 #endif // NEWITEM_H

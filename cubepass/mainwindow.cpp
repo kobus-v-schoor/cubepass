@@ -4,6 +4,7 @@
 #include "newitem.h"
 #include "itemdetails.h"
 #include "categorymanager.h"
+#include "deleteaccount.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -110,4 +111,18 @@ void MainWindow::on_btnManageCt_clicked()
 
     this->UpdateCategories();
     this->UpdateItems();
+}
+
+void MainWindow::on_actionLogout_triggered()
+{
+    this->ReLogin();
+}
+
+void MainWindow::on_actionDelete_this_account_triggered()
+{
+    DeleteAccount deleteAccount(_username);
+    deleteAccount.exec();
+
+    if (deleteAccount.DeletedAccount())
+        this->ReLogin();
 }
