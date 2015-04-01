@@ -24,6 +24,7 @@ private slots:
     void on_btnManageCt_clicked();
     void on_actionLogout_triggered();
     void on_actionDelete_this_account_triggered();
+    void on_actionBackup_this_profile_triggered();
 
 private:
     Ui::MainWindow *ui;

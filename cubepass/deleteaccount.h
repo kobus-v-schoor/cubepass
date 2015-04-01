@@ -13,7 +13,7 @@ class DeleteAccount : public QDialog
     Q_OBJECT
 
 public:
-    explicit DeleteAccount(std::string username);
+    explicit DeleteAccount(QWidget* parent, std::string username);
     ~DeleteAccount();
     bool DeletedAccount();
 
@@ -22,10 +22,13 @@ private slots:
 
     void on_btnCancel_clicked();
 
+    void on_btnDelete_clicked();
+
 private:
     Ui::DeleteAccount *ui;
     std::string _username;
     cube::dataBase _datFile;
+    cube::iniParser _iniFile;
     bool _deletedAccount;
 };
 

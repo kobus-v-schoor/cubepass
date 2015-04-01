@@ -1,0 +1,8 @@
+[username]
+	$Categories=category1;category2 or empty
+	$Items=item1;item2 or empty
+
+[username/itemName]
+	$Category=category
+	$Username=encrypted
+	$Password=encrypted

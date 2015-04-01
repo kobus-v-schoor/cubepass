@@ -13,8 +13,8 @@ class ItemDetails : public QDialog
     Q_OBJECT
 
 public:
-    explicit ItemDetails(std::string itemName, std::string username,
-                         std::string password);
+    explicit ItemDetails(QWidget* parent, std::string itemName,
+                         std::string username, std::string password);
     ~ItemDetails();
 
 private slots:

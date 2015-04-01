@@ -14,7 +14,7 @@ class CategoryManager : public QDialog
     Q_OBJECT
 
 public:
-    explicit CategoryManager(std::string username);
+    explicit CategoryManager(QWidget* parent, std::string username);
     ~CategoryManager();
 
 private slots:

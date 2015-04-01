@@ -1,7 +1,8 @@
 #include "categorymanager.h"
 #include "ui_categorymanager.h"
 
-CategoryManager::CategoryManager(std::string username) :
+CategoryManager::CategoryManager(QWidget* parent, std::string username) :
+    QDialog(parent),
     ui(new Ui::CategoryManager),
     _username(username),
     _datFile(DAT_FILE),

@@ -3,6 +3,7 @@
 //System includes
 #include <string>
 #include <vector>
+#include <fstream>
 
 //cube-lib includes
 #include "cube-lib.h"

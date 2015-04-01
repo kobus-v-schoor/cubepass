@@ -13,7 +13,7 @@ class NewItem : public QDialog
     Q_OBJECT
 
 public:
-    explicit NewItem(std::string username, std::string password);
+    explicit NewItem(QWidget* parent,std::string username, std::string password);
     ~NewItem();
 
 private slots:

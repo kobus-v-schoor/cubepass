@@ -1,9 +1,10 @@
-[username]
+[User]
+	$Username=username
+	$Password=encrypted
 	$Categories=category1;category2 or empty
 	$Items=item1;item2 or empty
 
-[username/itemName]
-	$ItemName=name
+[username/item1]
 	$Category=category
 	$Username=encrypted
-	$Password=encrypted
+	$Password=password

@@ -1,7 +1,8 @@
 #include "itemdetails.h"
 #include "ui_itemdetails.h"
 
-ItemDetails::ItemDetails(std::string itemName, std::string username, std::string password) :
+ItemDetails::ItemDetails(QWidget *parent, std::string itemName, std::string username, std::string password) :
+    QDialog(parent),
     ui(new Ui::ItemDetails),
     _itemName(itemName),
     _username(username),
@@ -98,7 +99,6 @@ void ItemDetails::on_btnEdit_clicked()
 
     if (!nameUnchanged)
     {
-        _datFile.CreateVar(sectionName, "ItemName");
         _datFile.CreateVar(sectionName, "Category");
         _datFile.CreateVar(sectionName, "Username");
         _datFile.CreateVar(sectionName, "Password");

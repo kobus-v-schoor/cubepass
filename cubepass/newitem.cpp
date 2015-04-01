@@ -2,7 +2,8 @@
 #include "ui_newitem.h"
 #include "stdafx.h"
 
-NewItem::NewItem(std::string username, std::string password) :
+NewItem::NewItem(QWidget *parent, std::string username, std::string password) :
+    QDialog(parent),
     ui(new Ui::NewItem),
     _username(username),
     _password(password),
@@ -76,11 +77,10 @@ void NewItem::on_btnCreate_clicked()
         _items += ui->edtItemName->text().toStdString() + ";";
         _datFile.ChangeVarValue(_username, "Items", _items);
 
-        test =_datFile.CreateVar(sectionName, "ItemName", ui->edtItemName->text().toStdString());
-        test=_datFile.CreateVar(sectionName, "Category", ui->cmbCategory->currentText().toStdString());
-        test=_datFile.CreateVar(sectionName, "Username", cube::Encryption(ui->edtUsername->text().toStdString(),
+        _datFile.CreateVar(sectionName, "Category", ui->cmbCategory->currentText().toStdString());
+        _datFile.CreateVar(sectionName, "Username", cube::Encryption(ui->edtUsername->text().toStdString(),
                                                                      _password));
-        test=_datFile.CreateVar(sectionName, "Password", cube::Encryption(ui->edtPassword->text().toStdString(),
+        _datFile.CreateVar(sectionName, "Password", cube::Encryption(ui->edtPassword->text().toStdString(),
                                                                      _password));
         _datFile.ApplyChanges();
         this->close();

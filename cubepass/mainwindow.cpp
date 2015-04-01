@@ -5,6 +5,7 @@
 #include "itemdetails.h"
 #include "categorymanager.h"
 #include "deleteaccount.h"
+#include "backupaccount.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,7 +24,7 @@ MainWindow::~MainWindow()
 void MainWindow::ReLogin()
 {
     this->hide();
-    LoginScreen newLogin;
+    LoginScreen newLogin(this);
     newLogin.exec();
 
     if (newLogin.LoggedIn())
@@ -85,7 +86,7 @@ void MainWindow::UpdateItems()
 
 void MainWindow::on_btnNewItem_clicked()
 {
-    NewItem newItem(_username, _password);
+    NewItem newItem(this, _username, _password);
     newItem.exec();
 
     this->UpdateItems();
@@ -98,7 +99,7 @@ void MainWindow::on_cmbCategory_currentIndexChanged(int index)
 
 void MainWindow::on_lstItems_itemDoubleClicked(QListWidgetItem *item)
 {
-    ItemDetails newDetails(item->text().toStdString(), _username, _password);
+    ItemDetails newDetails(this, item->text().toStdString(), _username, _password);
     newDetails.exec();
 
     this->UpdateItems();
@@ -106,7 +107,7 @@ void MainWindow::on_lstItems_itemDoubleClicked(QListWidgetItem *item)
 
 void MainWindow::on_btnManageCt_clicked()
 {
-    CategoryManager newMan(_username);
+    CategoryManager newMan(this, _username);
     newMan.exec();
 
     this->UpdateCategories();
@@ -120,9 +121,15 @@ void MainWindow::on_actionLogout_triggered()
 
 void MainWindow::on_actionDelete_this_account_triggered()
 {
-    DeleteAccount deleteAccount(_username);
+    DeleteAccount deleteAccount(this, _username);
     deleteAccount.exec();
 
     if (deleteAccount.DeletedAccount())
         this->ReLogin();
+}
+
+void MainWindow::on_actionBackup_this_profile_triggered()
+{
+    BackupAccount _newBackup(this, _username);
+    _newBackup.exec();
 }
