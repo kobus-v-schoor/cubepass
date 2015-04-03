@@ -27,7 +27,11 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="edtFilepath"/>
+      <widget class="QLineEdit" name="edtFilepath">
+       <property name="placeholderText">
+        <string>Filepath</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QToolButton" name="btnBrowse">
@@ -49,6 +53,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnBackup">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Backup</string>
        </property>

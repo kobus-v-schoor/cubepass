@@ -25,15 +25,24 @@ void BackupAccount::on_btnCancel_clicked()
 void BackupAccount::on_btnBrowse_clicked()
 {
     QFileDialog saveDialog;
-    ui->edtFilepath->setText(saveDialog.getSaveFileName(this,
-                             "Choose where to save backup") + ".dat");
+    std::string _filepath = saveDialog.getSaveFileName(this,"Choose where to save backup",
+                                                       "", "Backup file (*.dat)").toStdString();
+    if (_filepath.empty())
+        return;
+
+    int letter = _filepath.size() - 1;
+    std::string temp;
+    for (; (letter > 0) && (temp != ".dat"); letter--)
+        temp = _filepath[letter] + temp;
+
+    if (temp != ".dat")
+        _filepath += ".dat";
+
+    ui->edtFilepath->setText(_filepath.c_str());
 }
 
 void BackupAccount::on_btnBackup_clicked()
 {
-    if (ui->edtFilepath->text().isEmpty())
-        return;
-
     std::ofstream _fileOut(ui->edtFilepath->text().toStdString().c_str());
     if (!_fileOut.is_open())
     {
@@ -48,6 +57,7 @@ void BackupAccount::on_btnBackup_clicked()
     _fileOut.close();
 
     cube::dataBase _backup(ui->edtFilepath->text().toStdString());
+    cube::iniParser _iniFile(SETTINGS_FILE);
 
     QDateTime currentTime;
     currentTime.setDate(QDate::currentDate());
@@ -59,6 +69,7 @@ void BackupAccount::on_btnBackup_clicked()
     std::string items = _datFile.ReturnVar(_username, "Items");
     _backup.CreateSection("User");
     _backup.CreateVar("User", "Username", _username);
+    _backup.CreateVar("User", "Password", _iniFile.ReturnValue("Users", _username));
     _backup.CreateVar("User", "Categories", _datFile.ReturnVar(_username, "Categories"));
     _backup.CreateVar("User", "Items", items);
 
@@ -84,4 +95,9 @@ void BackupAccount::on_btnBackup_clicked()
                      QMessageBox::Ok);
     msgB.exec();
     this->close();
+}
+
+void BackupAccount::on_edtFilepath_textChanged(const QString &arg1)
+{
+    ui->btnBackup->setEnabled(!arg1.isEmpty());
 }

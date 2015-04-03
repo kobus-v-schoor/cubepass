@@ -2,6 +2,7 @@
 #define RESTOREACCOUNT_H
 
 #include <QDialog>
+#include "stdafx.h"
 
 namespace Ui {
 class RestoreAccount;
@@ -15,8 +16,18 @@ public:
     explicit RestoreAccount(QWidget *parent = 0);
     ~RestoreAccount();
 
+private slots:
+    void on_btnBrowse_clicked();
+    void on_btnCancel_clicked();
+    void on_btnRestore_clicked();
+    void on_edtFilepath_textChanged(const QString &arg1);
+
 private:
     Ui::RestoreAccount *ui;
+    cube::dataBase _datFile;
+    cube::iniParser _iniFile;
+
+    void ShowError();
 };
 
 #endif // RESTOREACCOUNT_H

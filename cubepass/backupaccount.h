@@ -25,6 +25,8 @@ private slots:
 
     void on_btnBackup_clicked();
 
+    void on_edtFilepath_textChanged(const QString &arg1);
+
 private:
     Ui::BackupAccount *ui;
     std::string _username;
