@@ -17,7 +17,8 @@ INCLUDEPATH += "/home/cube/repos/cube-lib/include"
 SOURCES += "/home/cube/repos/cube-lib/src/cube-lib-main.cpp" \
     deleteaccount.cpp \
     restoreaccount.cpp \
-    backupaccount.cpp
+    backupaccount.cpp \
+    restoreuserexists.cpp
 
 SOURCES += main.cpp\
         loginscreen.cpp \
@@ -36,7 +37,8 @@ HEADERS  += loginscreen.h \
     categorymanager.h \
     deleteaccount.h \
     restoreaccount.h \
-    backupaccount.h
+    backupaccount.h \
+    restoreuserexists.h
 
 FORMS    += loginscreen.ui \
     createuser.ui \
@@ -46,4 +48,5 @@ FORMS    += loginscreen.ui \
     categorymanager.ui \
     deleteaccount.ui \
     restoreaccount.ui \
-    backupaccount.ui
+    backupaccount.ui \
+    restoreuserexists.ui

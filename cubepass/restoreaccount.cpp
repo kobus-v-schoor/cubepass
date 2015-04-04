@@ -1,6 +1,7 @@
 #include "restoreaccount.h"
 #include "ui_restoreaccount.h"
 #include <QFileDialog>
+#include "restoreuserexists.h"
 
 RestoreAccount::RestoreAccount(QWidget *parent) :
     QDialog(parent),
@@ -51,9 +52,13 @@ void RestoreAccount::on_btnRestore_clicked()
         return;
     }
 
+    if (!_datFile.CreateSection(_username))
+    {
+
+    }
+
     _iniFile.AddProperty("Users", _username, _password);
 
-    _datFile.CreateSection(_username);
     _datFile.CreateVar(_username, "Categories", _categories);
     _datFile.CreateVar(_username, "Items", _items);
 
