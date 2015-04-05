@@ -7,7 +7,8 @@ RestoreAccount::RestoreAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::RestoreAccount),
     _datFile(DAT_FILE),
-    _iniFile(SETTINGS_FILE)
+    _iniFile(SETTINGS_FILE),
+    _restoredSomething(false)
 {
     ui->setupUi(this);
 }
@@ -54,7 +55,22 @@ void RestoreAccount::on_btnRestore_clicked()
 
     if (!_datFile.CreateSection(_username))
     {
+        RestoreUserExists _userExists(this);
+        _userExists.exec();
 
+        if (_userExists.Replaced())
+        {
+            _datFile.DeleteSection(_username);
+            _datFile.CreateSection(_username);
+        }
+        else{if (_userExists.Changed())
+            {
+                _username = _userExists.ReturnNewUsername();
+                _datFile.CreateSection(_username);
+            }
+            else
+                return;
+        }
     }
 
     _iniFile.AddProperty("Users", _username, _password);
@@ -71,7 +87,7 @@ void RestoreAccount::on_btnRestore_clicked()
         for (; (i < _items.size()) && (_items[i] != ';'); i++)
             temp += _items[i];
 
-        std::string sectionName = _username + temp;
+        std::string sectionName = _username + "/" + temp;
         _datFile.CreateSection(sectionName);
 
         std::string _tempCategory = _backup.ReturnVar(temp, "Category");
@@ -90,11 +106,32 @@ void RestoreAccount::on_btnRestore_clicked()
         _datFile.CreateVar(sectionName, "Password", _tempPassword);
     }
 
+    _restoredSomething = true;
     _iniFile.ApplyChanges();
     _datFile.ApplyChanges();
+    QMessageBox msgB(QMessageBox::Information, "Restore successful",
+                     "The restore has been successfully made.",
+                     QMessageBox::Ok);
+    msgB.exec();
+    this->close();
 }
 
 void RestoreAccount::on_edtFilepath_textChanged(const QString &arg1)
 {
     ui->btnRestore->setEnabled(!arg1.isEmpty());
+}
+
+bool RestoreAccount::RestoredAnAccount()
+{
+    return _restoredSomething;
+}
+
+void RestoreAccount::ShowError()
+{
+    QMessageBox msgB(QMessageBox::Critical, "Backup corrupt",
+                     "The backup file you specified seems to be corrupt "
+                     "or is missing data. This backup file cannot be used "
+                     "to restore a profile.", QMessageBox::Ok);
+    msgB.exec();
+    return;
 }

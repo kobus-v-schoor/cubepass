@@ -100,6 +100,7 @@
     <addaction name="menuBackup_Restore"/>
     <addaction name="actionDelete_this_account"/>
     <addaction name="separator"/>
+    <addaction name="actionChange_profile_password"/>
     <addaction name="actionLogout"/>
     <addaction name="actionExit"/>
    </widget>
@@ -147,6 +148,11 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionChange_profile_password">
+   <property name="text">
+    <string>Change profile password</string>
    </property>
   </action>
  </widget>

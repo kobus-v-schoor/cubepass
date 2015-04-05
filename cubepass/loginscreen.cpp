@@ -2,6 +2,7 @@
 #include "loginscreen.h"
 #include "ui_loginscreen.h"
 #include "createuser.h"
+#include "restoreaccount.h"
 
 LoginScreen::LoginScreen(QWidget *parent) :
     QDialog(parent),
@@ -77,7 +78,9 @@ void LoginScreen::on_btnCreate_clicked()
 
 void LoginScreen::on_btnRestore_clicked()
 {
-    //Restore window open
+    RestoreAccount restoreAccount(this);
+    restoreAccount.exec();
+    _iniFile.Reparse();
 }
 
 bool LoginScreen::LoggedIn()

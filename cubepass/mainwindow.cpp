@@ -6,6 +6,7 @@
 #include "categorymanager.h"
 #include "deleteaccount.h"
 #include "backupaccount.h"
+#include "restoreaccount.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -132,4 +133,25 @@ void MainWindow::on_actionBackup_this_profile_triggered()
 {
     BackupAccount _newBackup(this, _username);
     _newBackup.exec();
+}
+
+void MainWindow::on_actionRestore_a_profile_triggered()
+{
+    RestoreAccount newRestore(this);
+    newRestore.exec();
+
+    if (newRestore.RestoredAnAccount())
+    {
+        QMessageBox msgB(QMessageBox::Information, "Database modified",
+                         "The database for CubePass has been modified. "
+                         "Please re-login for changes to take effect.",
+                         QMessageBox::Ok);
+        msgB.exec();
+        this->ReLogin();
+    }
+}
+
+void MainWindow::on_actionChange_profile_password_triggered()
+{
+
 }

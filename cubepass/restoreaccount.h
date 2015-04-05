@@ -15,6 +15,7 @@ class RestoreAccount : public QDialog
 public:
     explicit RestoreAccount(QWidget *parent = 0);
     ~RestoreAccount();
+    bool RestoredAnAccount();
 
 private slots:
     void on_btnBrowse_clicked();
@@ -26,6 +27,7 @@ private:
     Ui::RestoreAccount *ui;
     cube::dataBase _datFile;
     cube::iniParser _iniFile;
+    bool _restoredSomething;
 
     void ShowError();
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>398</width>
-    <height>160</height>
+    <height>206</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>An user with the same username as the profile in the backup already exists. Do you want to replace the existing user or change the username of the profile in the backup?</string>
+      <string>An user with the same username as the profile in the backup already exists. Do you want to replace the existing user or change the username of the profile in the backup? If you replace the existing profile all data (all usernames and passwords) saved in that profile will be deleted.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -46,7 +46,7 @@
         <string>Change username</string>
        </property>
        <property name="default">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -54,6 +54,9 @@
       <widget class="QPushButton" name="btnCancel">
        <property name="text">
         <string>Cancel</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
