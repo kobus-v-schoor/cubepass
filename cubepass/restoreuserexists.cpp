@@ -32,7 +32,7 @@ void RestoreUserExists::on_btnChange_clicked()
     {
         QMessageBox msgB(QMessageBox::Warning, "User exists",
                          "The username you specified already exists. "
-                         "Please choose another.", QMessageBox::Ok);
+                         "Please choose another.", QMessageBox::Ok, this);
         msgB.exec();
         return;
     }

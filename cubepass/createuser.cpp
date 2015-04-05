@@ -35,7 +35,7 @@ void CreateUser::on_btnCreate_clicked()
 
         message = "User " + username + " successfully created.";
         QMessageBox msgB(QMessageBox::Information, "User created", message.c_str(),
-                         QMessageBox::Ok);
+                         QMessageBox::Ok, this);
         msgB.exec();
         _iniFile.ApplyChanges();
         _datFile.ApplyChanges();
@@ -46,7 +46,7 @@ void CreateUser::on_btnCreate_clicked()
         message = "The user \"" + username + "\" already exists. Please choose another "
                 "username.";
         QMessageBox msgB(QMessageBox::Warning, "User exists", message.c_str(),
-                         QMessageBox::Ok);
+                         QMessageBox::Ok, this);
         msgB.exec();
         ui->edtUsername->clear();
         ui->edtUsername->setFocus();

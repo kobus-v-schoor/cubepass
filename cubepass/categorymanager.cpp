@@ -75,7 +75,7 @@ void CategoryManager::on_btnDelete_clicked()
 {
     QMessageBox msgB(QMessageBox::Question, "Are you sure?", "Once you deleted this category "
                      "all items belonging to this category will be changed to the \"None\" category",
-                     QMessageBox::Yes | QMessageBox::No);
+                     QMessageBox::Yes | QMessageBox::No, this);
     if (msgB.exec() == QMessageBox::No)
         return;
 

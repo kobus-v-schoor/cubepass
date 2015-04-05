@@ -7,6 +7,7 @@
 #include "deleteaccount.h"
 #include "backupaccount.h"
 #include "restoreaccount.h"
+#include "changepword.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -145,7 +146,7 @@ void MainWindow::on_actionRestore_a_profile_triggered()
         QMessageBox msgB(QMessageBox::Information, "Database modified",
                          "The database for CubePass has been modified. "
                          "Please re-login for changes to take effect.",
-                         QMessageBox::Ok);
+                         QMessageBox::Ok, this);
         msgB.exec();
         this->ReLogin();
     }
@@ -153,5 +154,8 @@ void MainWindow::on_actionRestore_a_profile_triggered()
 
 void MainWindow::on_actionChange_profile_password_triggered()
 {
-
+    ChangePword changePword(this, _username, _password);
+    changePword.exec();
+    if (changePword.PwordChanged())
+        this->ReLogin();
 }

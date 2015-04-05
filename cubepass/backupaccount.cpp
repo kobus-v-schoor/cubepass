@@ -50,7 +50,7 @@ void BackupAccount::on_btnBackup_clicked()
                          "An error occured while trying to create a backup "
                          "file in the location you specified. Please choose "
                          "another and make sure you have the proper permissions "
-                         "to write to that location.", QMessageBox::Ok);
+                         "to write to that location.", QMessageBox::Ok, this);
         msgB.exec();
         return;
     }
@@ -92,7 +92,7 @@ void BackupAccount::on_btnBackup_clicked()
     std::string message = "Your backup was successfully made to ";
     message += ui->edtFilepath->text().toStdString();
     QMessageBox msgB(QMessageBox::Information, "Backup successful", message.c_str(),
-                     QMessageBox::Ok);
+                     QMessageBox::Ok, this);
     msgB.exec();
     this->close();
 }

@@ -99,8 +99,8 @@
     </widget>
     <addaction name="menuBackup_Restore"/>
     <addaction name="actionDelete_this_account"/>
-    <addaction name="separator"/>
     <addaction name="actionChange_profile_password"/>
+    <addaction name="separator"/>
     <addaction name="actionLogout"/>
     <addaction name="actionExit"/>
    </widget>

@@ -71,7 +71,7 @@ void ItemDetails::on_btnEdit_clicked()
     if (!_succeeded)
     {
         QMessageBox msgB(QMessageBox::Warning, "Item exists", "An item with the name you specified "
-                         "already exists. Please choose another.", QMessageBox::Ok);
+                         "already exists. Please choose another.", QMessageBox::Ok, this);
         msgB.exec();
         _editing = true;
         return;

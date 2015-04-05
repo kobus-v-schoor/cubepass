@@ -36,7 +36,7 @@ void DeleteAccount::on_btnDelete_clicked()
 {
     QMessageBox msgB(QMessageBox::Question, "Are you sure?",
                      "This action cannot be undone.", QMessageBox::Yes |
-                     QMessageBox::No);
+                     QMessageBox::No, this);
     if (msgB.exec() == QMessageBox::No)
         return;
 

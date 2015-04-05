@@ -60,7 +60,7 @@ void LoginScreen::on_btnLogin_clicked()
                 "to create a new user simply press the \"Create user\" button "
                 "on the login screen.";
         QMessageBox msgB(QMessageBox::Warning, "User does not exist", message.c_str(),
-                         QMessageBox::Ok);
+                         QMessageBox::Ok, this);
         msgB.exec();
         ui->edtUsername->clear();
         ui->edtPassword->clear();

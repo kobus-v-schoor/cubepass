@@ -67,7 +67,7 @@ void NewItem::on_btnCreate_clicked()
     if (!_datFile.CreateSection(sectionName))
     {
         QMessageBox msgB(QMessageBox::Warning, "Item exists", "This item name you specified "
-                         "already exists. Please choose another.", QMessageBox::Ok);
+                         "already exists. Please choose another.", QMessageBox::Ok, this);
         msgB.exec();
         ui->edtItemName->clear();
     }

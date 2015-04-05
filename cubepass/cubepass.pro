@@ -18,7 +18,8 @@ SOURCES += "/home/cube/repos/cube-lib/src/cube-lib-main.cpp" \
     deleteaccount.cpp \
     restoreaccount.cpp \
     backupaccount.cpp \
-    restoreuserexists.cpp
+    restoreuserexists.cpp \
+    changepword.cpp
 
 SOURCES += main.cpp\
         loginscreen.cpp \
@@ -38,7 +39,8 @@ HEADERS  += loginscreen.h \
     deleteaccount.h \
     restoreaccount.h \
     backupaccount.h \
-    restoreuserexists.h
+    restoreuserexists.h \
+    changepword.h
 
 FORMS    += loginscreen.ui \
     createuser.ui \
@@ -49,4 +51,5 @@ FORMS    += loginscreen.ui \
     deleteaccount.ui \
     restoreaccount.ui \
     backupaccount.ui \
-    restoreuserexists.ui
+    restoreuserexists.ui \
+    changepword.ui

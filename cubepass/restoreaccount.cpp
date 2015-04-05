@@ -111,7 +111,7 @@ void RestoreAccount::on_btnRestore_clicked()
     _datFile.ApplyChanges();
     QMessageBox msgB(QMessageBox::Information, "Restore successful",
                      "The restore has been successfully made.",
-                     QMessageBox::Ok);
+                     QMessageBox::Ok, this);
     msgB.exec();
     this->close();
 }
@@ -131,7 +131,7 @@ void RestoreAccount::ShowError()
     QMessageBox msgB(QMessageBox::Critical, "Backup corrupt",
                      "The backup file you specified seems to be corrupt "
                      "or is missing data. This backup file cannot be used "
-                     "to restore a profile.", QMessageBox::Ok);
+                     "to restore a profile.", QMessageBox::Ok, this);
     msgB.exec();
     return;
 }
