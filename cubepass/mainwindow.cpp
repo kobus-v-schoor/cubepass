@@ -12,21 +12,24 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    _datFile(DAT_FILE)
+    _datFile(DAT_FILE),
+    _statusText(new QLabel(this))
 {
     ui->setupUi(this);
+    _statusText->setFrameStyle(QFrame::NoFrame);
     this->ReLogin();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete _statusText;
 }
 
 void MainWindow::ReLogin()
 {
     this->hide();
-    LoginScreen newLogin(this);
+    LoginScreen newLogin;
     newLogin.exec();
 
     if (newLogin.LoggedIn())
@@ -36,6 +39,10 @@ void MainWindow::ReLogin()
 
         this->UpdateCategories();
         this->UpdateItems();
+        std::string temp = "Currently logged in as: " + _username;
+        this->_statusText->setText(temp.c_str());
+        ui->statusbar->clearMessage();
+        ui->statusbar->addWidget(_statusText);
         this->show();
     }
     else

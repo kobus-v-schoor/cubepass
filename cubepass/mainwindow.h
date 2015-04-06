@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "stdafx.h"
 #include <QListWidgetItem>
+#include <QLabel>
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +34,7 @@ private:
     std::string _username;
     std::string _password;
     cube::dataBase _datFile;
+    QLabel *_statusText;
 
     void ReLogin();
     void UpdateCategories();

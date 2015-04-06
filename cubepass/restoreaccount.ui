@@ -14,7 +14,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Account restoration</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

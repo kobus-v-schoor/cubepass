@@ -14,7 +14,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Create a new item</string>
+   <string>Create new item</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

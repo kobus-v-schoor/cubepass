@@ -70,7 +70,7 @@ void LoginScreen::on_btnLogin_clicked()
 
 void LoginScreen::on_btnCreate_clicked()
 {
-    CreateUser newUser;
+    CreateUser newUser(this);
     newUser.exec();
     this->_iniFile.Reparse();
     ui->edtUsername->setFocus();

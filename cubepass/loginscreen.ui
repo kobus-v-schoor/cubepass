@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>CubePass - Login</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLineEdit" name="edtUsername">

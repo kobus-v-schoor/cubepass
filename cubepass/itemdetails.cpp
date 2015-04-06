@@ -11,6 +11,8 @@ ItemDetails::ItemDetails(QWidget *parent, std::string itemName, std::string user
     _editing(false)
 {
     ui->setupUi(this);
+    std::string temp = _itemName + " - Item details";
+    this->setWindowTitle(temp.c_str());
 
     std::string sectionName = _username + "/" + _itemName;
     ui->edtItemName->setText(_itemName.c_str());

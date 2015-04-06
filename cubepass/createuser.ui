@@ -22,6 +22,10 @@
   <property name="windowTitle">
    <string>Create a new user</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLineEdit" name="edtUsername">

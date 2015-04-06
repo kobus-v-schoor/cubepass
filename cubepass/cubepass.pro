@@ -13,21 +13,21 @@ TEMPLATE = app
 
 CONFIG += c++11
 
+SOURCES += "/home/cube/repos/cube-lib/include/cube-lib-src.cpp"
 INCLUDEPATH += "/home/cube/repos/cube-lib/include"
-SOURCES += "/home/cube/repos/cube-lib/src/cube-lib-main.cpp" \
+
+SOURCES += main.cpp\
+    loginscreen.cpp \
+    createuser.cpp \
+    mainwindow.cpp \
+    newitem.cpp \
+    itemdetails.cpp \
+    categorymanager.cpp \
     deleteaccount.cpp \
     restoreaccount.cpp \
     backupaccount.cpp \
     restoreuserexists.cpp \
     changepword.cpp
-
-SOURCES += main.cpp\
-        loginscreen.cpp \
-    createuser.cpp \
-    mainwindow.cpp \
-    newitem.cpp \
-    itemdetails.cpp \
-    categorymanager.cpp
 
 HEADERS  += loginscreen.h \
     stdafx.h \
@@ -42,7 +42,7 @@ HEADERS  += loginscreen.h \
     restoreuserexists.h \
     changepword.h
 
-FORMS    += loginscreen.ui \
+FORMS += loginscreen.ui \
     createuser.ui \
     mainwindow.ui \
     newitem.ui \
