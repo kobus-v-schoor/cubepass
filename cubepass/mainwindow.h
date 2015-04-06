@@ -1,10 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include "stdafx.h"
+#include <QMainWindow>
 #include <QListWidgetItem>
 #include <QLabel>
+#include <QDesktopServices>
+#include <QUrl>
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +30,8 @@ private slots:
     void on_actionBackup_this_profile_triggered();
     void on_actionRestore_a_profile_triggered();
     void on_actionChange_profile_password_triggered();
+    void on_actionDonate_triggered();
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;

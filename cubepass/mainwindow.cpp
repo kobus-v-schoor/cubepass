@@ -8,6 +8,7 @@
 #include "backupaccount.h"
 #include "restoreaccount.h"
 #include "changepword.h"
+#include "aboutscreen.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -165,4 +166,16 @@ void MainWindow::on_actionChange_profile_password_triggered()
     changePword.exec();
     if (changePword.PwordChanged())
         this->ReLogin();
+}
+
+void MainWindow::on_actionDonate_triggered()
+{
+    QString donateUrl("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GHDMPQVJS8832");
+    QDesktopServices::openUrl(QUrl(donateUrl));
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    AboutScreen aboutScreen(this);
+    aboutScreen.exec();
 }
