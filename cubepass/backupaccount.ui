@@ -14,8 +14,8 @@
    <string>Backup account</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
+   <iconset resource="LogoResource.qrc">
+    <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -72,6 +72,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="LogoResource.qrc"/>
+ </resources>
  <connections/>
 </ui>

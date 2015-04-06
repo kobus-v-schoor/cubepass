@@ -56,3 +56,6 @@ FORMS += loginscreen.ui \
     restoreuserexists.ui \
     changepword.ui \
     aboutscreen.ui
+
+RESOURCES += \
+    LogoResource.qrc

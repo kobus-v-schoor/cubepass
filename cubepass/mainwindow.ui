@@ -17,8 +17,8 @@
    <string>CubePass</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../Logo.ico</normaloff>../Logo.ico</iconset>
+   <iconset resource="LogoResource.qrc">
+    <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -160,7 +160,9 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="LogoResource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionExit</sender>

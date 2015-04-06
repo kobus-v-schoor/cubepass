@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>About CubePass</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="LogoResource.qrc">
+    <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -29,7 +33,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../Logo.png</pixmap>
+    <pixmap resource="LogoResource.qrc">:/Logo/Logo.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -64,7 +68,7 @@
     <string>Buy the developer some more RAM :)</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -98,6 +102,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="LogoResource.qrc"/>
+ </resources>
  <connections/>
 </ui>
