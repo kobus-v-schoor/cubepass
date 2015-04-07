@@ -76,6 +76,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="btnCancel">
+       <property name="toolTip">
+        <string>Discard changes</string>
+       </property>
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -85,6 +88,9 @@
       <widget class="QPushButton" name="btnCreate">
        <property name="enabled">
         <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Createthis item</string>
        </property>
        <property name="text">
         <string>Create item</string>

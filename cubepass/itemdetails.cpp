@@ -58,7 +58,9 @@ void ItemDetails::on_btnEdit_clicked()
         ui->edtPassword->setReadOnly(false);
         ui->cmbCategory->setEnabled(true);
         ui->btnEdit->setText("Save changes");
-        ui->btnDone->setText("Delete");
+        ui->btnClose->setText("Delete");
+        ui->btnClose->setToolTip("Delete this item");
+
         return;
     }
 
@@ -118,10 +120,11 @@ void ItemDetails::on_btnEdit_clicked()
     ui->edtPassword->setReadOnly(true);
     ui->cmbCategory->setEnabled(false);
     ui->btnEdit->setText("Edit");
-    ui->btnDone->setText("Done");
+    ui->btnClose->setText("Close");
+    ui->btnClose->setToolTip("Close this window");
 }
 
-void ItemDetails::on_btnDone_clicked()
+void ItemDetails::on_btnClose_clicked()
 {
     if (!_editing)
         this->close();

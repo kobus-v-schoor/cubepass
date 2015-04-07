@@ -22,7 +22,7 @@ private slots:
 
     void on_btnEdit_clicked();
 
-    void on_btnDone_clicked();
+    void on_btnClose_clicked();
 
     void on_edtItemName_textChanged(const QString &arg1);
 

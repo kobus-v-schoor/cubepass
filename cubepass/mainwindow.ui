@@ -24,6 +24,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="btnNewItem">
+      <property name="toolTip">
+       <string>Add a new item to your account</string>
+      </property>
       <property name="text">
        <string>Add new item</string>
       </property>
@@ -31,6 +34,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="btnManageCt">
+      <property name="toolTip">
+       <string>Manage your categories</string>
+      </property>
       <property name="text">
        <string>Manage categories</string>
       </property>
@@ -53,6 +59,9 @@
       </item>
       <item>
        <widget class="QComboBox" name="cmbCategory">
+        <property name="toolTip">
+         <string>Select which category to show</string>
+        </property>
         <property name="currentText">
          <string>All</string>
         </property>

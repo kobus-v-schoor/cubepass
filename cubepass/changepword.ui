@@ -106,6 +106,9 @@
        <property name="enabled">
         <bool>false</bool>
        </property>
+       <property name="toolTip">
+        <string>Change your account password</string>
+       </property>
        <property name="text">
         <string>Change password</string>
        </property>

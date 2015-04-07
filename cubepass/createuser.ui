@@ -109,6 +109,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnCreate">
+       <property name="toolTip">
+        <string>Create new user</string>
+       </property>
        <property name="text">
         <string>Create user</string>
        </property>
