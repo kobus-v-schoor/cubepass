@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     backupaccount.cpp \
     restoreuserexists.cpp \
     changepword.cpp \
-    aboutscreen.cpp
+    aboutscreen.cpp \
+    helpscreen.cpp
 
 HEADERS  += loginscreen.h \
     stdafx.h \
@@ -39,7 +40,8 @@ HEADERS  += loginscreen.h \
     backupaccount.h \
     restoreuserexists.h \
     changepword.h \
-    aboutscreen.h
+    aboutscreen.h \
+    helpscreen.h
 
 FORMS += loginscreen.ui \
     createuser.ui \
@@ -52,7 +54,8 @@ FORMS += loginscreen.ui \
     backupaccount.ui \
     restoreuserexists.ui \
     changepword.ui \
-    aboutscreen.ui
+    aboutscreen.ui \
+    helpscreen.ui
 
 RESOURCES += \
     LogoResource.qrc

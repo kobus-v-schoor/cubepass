@@ -5,7 +5,7 @@ DeleteAccount::DeleteAccount(QWidget *parent, std::string username) :
     QDialog(parent),
     ui(new Ui::DeleteAccount),
     _username(username),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _iniFile(SETTINGS_FILE),
     _deletedAccount(false)
 {

@@ -5,7 +5,7 @@ CreateUser::CreateUser(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateUser),
     _iniFile(SETTINGS_FILE),
-    _datFile(DAT_FILE)
+    _datFile(DATABASE_FILE)
 {
     ui->setupUi(this);
     ui->lblWarning->hide();

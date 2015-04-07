@@ -6,7 +6,7 @@
 RestoreAccount::RestoreAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::RestoreAccount),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _iniFile(SETTINGS_FILE),
     _restoredSomething(false)
 {

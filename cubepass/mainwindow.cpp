@@ -13,7 +13,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _statusText(new QLabel(this))
 {
     ui->setupUi(this);

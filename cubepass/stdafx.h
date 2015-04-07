@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <stdlib.h>
 
 //cube-lib includes
 #include "cube-lib.h"
@@ -12,5 +13,6 @@
 #include <QMessageBox>
 
 //Global declares
-#define SETTINGS_FILE "settings.ini"
-#define DAT_FILE "usersdata.dat"
+extern std::string SETTINGS_FILE;
+extern std::string DATABASE_FILE;
+#define VERSION "2.0.0"

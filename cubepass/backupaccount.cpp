@@ -6,7 +6,7 @@
 BackupAccount::BackupAccount(QWidget *parent, std::string username) :
     QDialog(parent),
     ui(new Ui::BackupAccount),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _username(username)
 {
     ui->setupUi(this);

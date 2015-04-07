@@ -1,8 +1,6 @@
-#Info about software
-
 [Startup]
-FirstStart=true
-Version=versionnumber
+Version=versionNumber
+RememberUsername=false
 
 [Users]
-username=password
+username=encryptedPassword

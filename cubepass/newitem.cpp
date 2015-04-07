@@ -7,7 +7,7 @@ NewItem::NewItem(QWidget *parent, std::string username, std::string password) :
     ui(new Ui::NewItem),
     _username(username),
     _password(password),
-    _datFile(DAT_FILE)
+    _datFile(DATABASE_FILE)
 {
     ui->setupUi(this);
 

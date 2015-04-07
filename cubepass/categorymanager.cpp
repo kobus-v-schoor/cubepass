@@ -5,7 +5,7 @@ CategoryManager::CategoryManager(QWidget* parent, std::string username) :
     QDialog(parent),
     ui(new Ui::CategoryManager),
     _username(username),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _editing(false)
 {
     ui->setupUi(this);

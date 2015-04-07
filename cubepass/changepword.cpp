@@ -6,7 +6,7 @@ ChangePword::ChangePword(QWidget *parent, std::string username, std::string pass
     ui(new Ui::ChangePword),
     _username(username),
     _password(password),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _iniFile(SETTINGS_FILE),
     _pwordChanged(false)
 {

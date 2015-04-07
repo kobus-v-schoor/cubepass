@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "mainwindow.h"
+#include "windowsdatalocation.h"
 #include <QApplication>
 
 #ifdef _WIN32
@@ -8,48 +9,79 @@
     #define ONWIN false
 #endif
 
+std::string SETTINGS_FILE;
+std::string DATABASE_FILE;
+
+void CreateDataFiles();
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    cube::iniParser _iniFile(SETTINGS_FILE);
-    cube::dataBase _datFile(DAT_FILE);
-
-    if (!_iniFile.IsParsed())
+    if (!ONWIN)
     {
-        QMessageBox msgB(QMessageBox::Critical, "Settings corrupt", "The \"settings.ini\" file "
-                    "seems to be corrupt. Please make sure htis program has read and write access "
-                    "to this file. Re-installing will fix his problem if the file was damaged.",
-                    QMessageBox::Ok);
-        msgB.exec();
-        return 0;
+        SETTINGS_FILE = getenv("HOME");
+        SETTINGS_FILE += "/.cubepass/settings.ini";
+        DATABASE_FILE = getenv("HOME");
+        DATABASE_FILE += "/.cubepass/userdata.dat";
+
+        std::ifstream fileCheck(SETTINGS_FILE.c_str());
+        if (!fileCheck.is_open())
+             CreateDataFiles();
     }
-
-    if (!_datFile.IsParsed())
+    else
     {
-        QMessageBox msgB(QMessageBox::Critical, "User data corrupt", "The \"userdata.dat\" file "
-                    "seems to be corrupt. Please make sure htis program has read and write access "
-                    "to this file. Re-installing will fix his problem if the file was damaged.",
-                    QMessageBox::Ok);
-        msgB.exec();
-        return 0;
-    }
+        SETTINGS_FILE = getenv("USERPROFILE");
+        SETTINGS_FILE += "\\Documents\\CubePass\\settings.ini";
+        DATABASE_FILE = getenv("USERPROFILE");
+        DATABASE_FILE += "\\Documents\\CubePass\\userdata.dat";
 
-    if (ONWIN)
-    {
-        QMessageBox msgB(QMessageBox::Information, "Permissions needed", "I detected that your running Windows. "
-                         "Because of this, especially if you're runnig Win 8, you need to run this program "
-                         "with admin rights. If not, this program will not be able to save any of its data. "
-                         "To do this, simply right-click on the shortcut and click \"Run as administrator\".",
-                         QMessageBox::Ok);
-        msgB.exec();
-        _iniFile.ChangeProperty("Startup", "FirstStart", "false");
-        _iniFile.ApplyChanges();
-        return 0;
+        std::ifstream fileCheck(SETTINGS_FILE.c_str());
+        if (!fileCheck.is_open())
+            CreateDataFiles();
     }
 
     MainWindow mainWin;
     if (!mainWin.isVisible())
         return 0;
     return a.exec();
+}
+
+void CreateDataFiles()
+{
+    if (!ONWIN)
+    {
+        std::string temp = "mkdir ";
+        temp += getenv("HOME");
+        temp += "/.cubepass";
+        std::system(temp.c_str());
+    }
+    else
+    {
+        std::string temp = "md ";
+        temp += getenv("USERPROFILE");
+        temp += "\\Documents\\CubePass";
+        system(temp.c_str());
+    }
+    std::ofstream fileCreate(SETTINGS_FILE);
+    fileCreate.close();
+    fileCreate.open(DATABASE_FILE);
+    fileCreate.close();
+
+    cube::iniParser _iniFile(SETTINGS_FILE);
+    cube::dataBase _datFile(DATABASE_FILE);
+
+    _iniFile.CreateSection("Startup");
+    _iniFile.AddProperty("Startup", "Version", VERSION);
+    _iniFile.AddProperty("Startup", "RememberUsername", "false");
+    _iniFile.CreateSection("Users");
+
+    _datFile.AddComment("CubePass database");
+    _datFile.AddComment("This database stores all the data for CubePass");
+    _datFile.AddComment("ALL SENSITIVE DATA IS ENCRYPTED");
+    _datFile.AddComment("");
+
+    _iniFile.ApplyChanges();
+    _datFile.ApplyChanges();
+    return;
 }

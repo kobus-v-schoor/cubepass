@@ -7,7 +7,7 @@ ItemDetails::ItemDetails(QWidget *parent, std::string itemName, std::string user
     _itemName(itemName),
     _username(username),
     _password(password),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _editing(false)
 {
     ui->setupUi(this);

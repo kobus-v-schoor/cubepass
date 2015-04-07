@@ -4,7 +4,7 @@
 RestoreUserExists::RestoreUserExists(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::RestoreUserExists),
-    _datFile(DAT_FILE),
+    _datFile(DATABASE_FILE),
     _replace(false),
     _changed(false)
 {
