@@ -11,25 +11,23 @@ class CategoryManager;
 
 class CategoryManager : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit CategoryManager(QWidget* parent, std::string username);
-    ~CategoryManager();
+	explicit CategoryManager(QWidget* parent, std::string username);
+	~CategoryManager();
 
 private slots:
-    void on_btnAdd_clicked();
-
-    void on_btnDelete_clicked();
-
-    void on_lstCategories_itemClicked(QListWidgetItem *item);
+	void on_btnAdd_clicked();
+	void on_btnDelete_clicked();
+	void on_lstCategories_itemClicked(QListWidgetItem *item);
 
 private:
-    Ui::CategoryManager *ui;
-    std::string _username;
-    cube::dataBase _datFile;
-    bool _editing;
-    std::vector<std::string> _categories;
+	Ui::CategoryManager *ui;
+	std::string _username;
+	cube::dataBase _datFile;
+	bool _editing;
+	std::vector<std::string> _categories;
 };
 
 #endif // CATEGORYMANAGER_H

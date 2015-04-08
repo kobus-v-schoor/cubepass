@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/Logo">
+        <file alias="Logo.png">rsc/Logo.png</file>
+    </qresource>
+    <qresource prefix="/Screenshots">
+        <file alias="LoginScreen">rsc/Screenshots/LoginScreen.png</file>
+        <file alias="Categories">rsc/Screenshots/Categories.png</file>
+        <file alias="CategorySelect">rsc/Screenshots/CategorySelect.png</file>
+        <file alias="MainWindow">rsc/Screenshots/MainWindow.png</file>
+        <file alias="MenuBar">rsc/Screenshots/MenuBar.png</file>
+        <file alias="NewItem">rsc/Screenshots/NewItem.png</file>
+    </qresource>
+</RCC>

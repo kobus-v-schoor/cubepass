@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     restoreuserexists.cpp \
     changepword.cpp \
     aboutscreen.cpp \
-    helpscreen.cpp
+    helpscreen.cpp \
+    generatepword.cpp
 
 HEADERS  += loginscreen.h \
     stdafx.h \
@@ -41,7 +42,8 @@ HEADERS  += loginscreen.h \
     restoreuserexists.h \
     changepword.h \
     aboutscreen.h \
-    helpscreen.h
+    helpscreen.h \
+    generatepword.h
 
 FORMS += loginscreen.ui \
     createuser.ui \
@@ -55,10 +57,11 @@ FORMS += loginscreen.ui \
     restoreuserexists.ui \
     changepword.ui \
     aboutscreen.ui \
-    helpscreen.ui
+    helpscreen.ui \
+    generatepword.ui
 
 RESOURCES += \
-    LogoResource.qrc
+    ImageResources.qrc
 
 SOURCES += "/home/cube/repos/cube-lib/include/cube-lib-src.cpp"
 INCLUDEPATH += "/home/cube/repos/cube-lib/include"

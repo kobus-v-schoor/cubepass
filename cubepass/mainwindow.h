@@ -14,35 +14,36 @@ class MainWindow;
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	explicit MainWindow(QWidget *parent = 0);
+	~MainWindow();
 
 private slots:
-    void on_btnNewItem_clicked();
-    void on_cmbCategory_currentIndexChanged(int index);
-    void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
-    void on_btnManageCt_clicked();
-    void on_actionLogout_triggered();
-    void on_actionDelete_this_account_triggered();
-    void on_actionBackup_this_profile_triggered();
-    void on_actionRestore_a_profile_triggered();
-    void on_actionChange_profile_password_triggered();
-    void on_actionDonate_triggered();
-    void on_actionAbout_triggered();
+	void on_btnNewItem_clicked();
+	void on_cmbCategory_currentIndexChanged(int index);
+	void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
+	void on_btnManageCt_clicked();
+	void on_actionLogout_triggered();
+	void on_actionDelete_this_account_triggered();
+	void on_actionBackup_this_profile_triggered();
+	void on_actionRestore_a_profile_triggered();
+	void on_actionChange_profile_password_triggered();
+	void on_actionDonate_triggered();
+	void on_actionAbout_triggered();
 
 private:
-    Ui::MainWindow *ui;
-    std::string _username;
-    std::string _password;
-    cube::dataBase _datFile;
-    QLabel *_statusText;
+	Ui::MainWindow *ui;
+	std::string _username;
+	std::string _password;
+	cube::iniParser _iniFile;
+	cube::dataBase _datFile;
+	QLabel *_statusText;
 
-    void ReLogin();
-    void UpdateCategories();
-    void UpdateItems();
+	void ReLogin();
+	void UpdateCategories();
+	void UpdateItems();
 };
 
 #endif // MAINWINDOW_H

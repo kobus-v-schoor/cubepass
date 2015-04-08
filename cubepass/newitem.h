@@ -10,32 +10,28 @@ class NewItem;
 
 class NewItem : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit NewItem(QWidget* parent,std::string username, std::string password);
-    ~NewItem();
+	explicit NewItem(QWidget* parent,std::string username, std::string password);
+	~NewItem();
 
 private slots:
-    void on_edtItemName_textChanged(const QString &arg1);
-
-    void on_edtUsername_textChanged(const QString &arg1);
-
-    void on_edtPassword_textChanged(const QString &arg1);
-
-    void on_chckShowPword_toggled(bool checked);
-
-    void on_btnCancel_clicked();
-
-    void on_btnCreate_clicked();
+	void on_edtItemName_textChanged(const QString &arg1);
+	void on_edtUsername_textChanged(const QString &arg1);
+	void on_edtPassword_textChanged(const QString &arg1);
+	void on_chckShowPword_toggled(bool checked);
+	void on_btnCancel_clicked();
+	void on_btnCreate_clicked();
+	void on_btnGenerate_clicked();
 
 private:
-    Ui::NewItem *ui;
-    cube::dataBase _datFile;
-    std::string _username;
-    std::string _password;
+	Ui::NewItem *ui;
+	cube::dataBase _datFile;
+	std::string _username;
+	std::string _password;
 
-    void updateBtnCreate();
+	void updateBtnCreate();
 };
 
 #endif // NEWITEM_H

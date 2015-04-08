@@ -10,26 +10,26 @@ class RestoreAccount;
 
 class RestoreAccount : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit RestoreAccount(QWidget *parent = 0);
-    ~RestoreAccount();
-    bool RestoredAnAccount();
+	explicit RestoreAccount(QWidget *parent = 0);
+	~RestoreAccount();
+	bool RestoredAnAccount();
 
 private slots:
-    void on_btnBrowse_clicked();
-    void on_btnCancel_clicked();
-    void on_btnRestore_clicked();
-    void on_edtFilepath_textChanged(const QString &arg1);
+	void on_btnBrowse_clicked();
+	void on_btnCancel_clicked();
+	void on_btnRestore_clicked();
+	void on_edtFilepath_textChanged(const QString &arg1);
 
 private:
-    Ui::RestoreAccount *ui;
-    cube::dataBase _datFile;
-    cube::iniParser _iniFile;
-    bool _restoredSomething;
+	Ui::RestoreAccount *ui;
+	cube::dataBase _datFile;
+	cube::iniParser _iniFile;
+	bool _restoredSomething;
 
-    void ShowError();
+	void ShowError();
 };
 
 #endif // RESTOREACCOUNT_H

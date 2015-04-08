@@ -10,27 +10,22 @@ class BackupAccount;
 
 class BackupAccount : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit BackupAccount(QWidget* parent, std::string username);
-    ~BackupAccount();
+	explicit BackupAccount(QWidget* parent, std::string username);
+	~BackupAccount();
 
 private slots:
-
-
-    void on_btnCancel_clicked();
-
-    void on_btnBrowse_clicked();
-
-    void on_btnBackup_clicked();
-
-    void on_edtFilepath_textChanged(const QString &arg1);
+	void on_btnCancel_clicked();
+	void on_btnBrowse_clicked();
+	void on_btnBackup_clicked();
+	void on_edtFilepath_textChanged(const QString &arg1);
 
 private:
-    Ui::BackupAccount *ui;
-    std::string _username;
-    cube::dataBase _datFile;
+	Ui::BackupAccount *ui;
+	std::string _username;
+	cube::dataBase _datFile;
 };
 
 #endif // BACKUPACCOUNT_H
