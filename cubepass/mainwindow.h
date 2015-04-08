@@ -32,6 +32,7 @@ private slots:
 	void on_actionChange_profile_password_triggered();
 	void on_actionDonate_triggered();
 	void on_actionAbout_triggered();
+	void on_actionHelp_triggered();
 
 private:
 	Ui::MainWindow *ui;

@@ -17,7 +17,7 @@
    <string>About CubePass</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="LogoResource.qrc">
+   <iconset resource="ImageResources.qrc">
     <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
   <widget class="QLabel" name="label">
@@ -33,7 +33,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="LogoResource.qrc">:/Logo/Logo.png</pixmap>
+    <pixmap resource="ImageResources.qrc">:/Logo/Logo.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -103,7 +103,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="LogoResource.qrc"/>
+  <include location="ImageResources.qrc"/>
  </resources>
  <connections/>
 </ui>

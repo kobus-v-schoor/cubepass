@@ -14,7 +14,7 @@
    <string>User exists</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="LogoResource.qrc">
+   <iconset resource="ImageResources.qrc">
     <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -78,7 +78,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="LogoResource.qrc"/>
+  <include location="ImageResources.qrc"/>
  </resources>
  <connections/>
 </ui>

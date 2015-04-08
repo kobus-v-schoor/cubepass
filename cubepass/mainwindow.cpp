@@ -185,3 +185,8 @@ void MainWindow::on_actionAbout_triggered()
 	AboutScreen aboutScreen(this);
 	aboutScreen.exec();
 }
+
+void MainWindow::on_actionHelp_triggered()
+{
+	HelpScreen(this).exec();
+}

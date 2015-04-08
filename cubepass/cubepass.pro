@@ -60,8 +60,7 @@ FORMS += loginscreen.ui \
     helpscreen.ui \
     generatepword.ui
 
-RESOURCES += \
-    ImageResources.qrc
+RESOURCES += ImageResources.qrc
 
 SOURCES += "/home/cube/repos/cube-lib/include/cube-lib-src.cpp"
 INCLUDEPATH += "/home/cube/repos/cube-lib/include"

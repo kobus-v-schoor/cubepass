@@ -5,9 +5,8 @@
     <qresource prefix="/Screenshots">
         <file alias="LoginScreen">rsc/Screenshots/LoginScreen.png</file>
         <file alias="Categories">rsc/Screenshots/Categories.png</file>
-        <file alias="CategorySelect">rsc/Screenshots/CategorySelect.png</file>
         <file alias="MainWindow">rsc/Screenshots/MainWindow.png</file>
         <file alias="MenuBar">rsc/Screenshots/MenuBar.png</file>
-        <file alias="NewItem">rsc/Screenshots/NewItem.png</file>
+        <file alias="CategorySelect">rsc/Screenshots/CategorySelect.png</file>
     </qresource>
 </RCC>

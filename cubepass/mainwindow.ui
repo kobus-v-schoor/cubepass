@@ -17,7 +17,7 @@
    <string>CubePass</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="LogoResource.qrc">
+   <iconset resource="ImageResources.qrc">
     <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -123,6 +123,7 @@
     </property>
     <addaction name="actionAbout"/>
     <addaction name="actionDonate"/>
+    <addaction name="actionHelp"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuAbout"/>
@@ -168,9 +169,17 @@
     <string>Change profile password</string>
    </property>
   </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="LogoResource.qrc"/>
+  <include location="ImageResources.qrc"/>
  </resources>
  <connections>
   <connection>
