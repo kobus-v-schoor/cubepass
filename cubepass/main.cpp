@@ -49,16 +49,16 @@ void CreateDataFiles()
 {
 	if (!ONWIN)
 	{
-		std::string temp = "mkdir ";
-		temp += getenv("HOME");
-		temp += "/.cubepass";
+        std::string temp = "mkdir \"";
+        temp += getenv("HOME");
+        temp += "/.cubepass\"";
 		std::system(temp.c_str());
 	}
 	else
 	{
-		std::string temp = "md ";
+        std::string temp = "md \"";
 		temp += getenv("USERPROFILE");
-		temp += "\\Documents\\CubePass";
+        temp += "\\Documents\\CubePass\"";
 		system(temp.c_str());
 	}
 	std::ofstream fileCreate(SETTINGS_FILE);
