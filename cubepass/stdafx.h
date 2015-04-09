@@ -5,6 +5,9 @@
 #include <vector>
 #include <fstream>
 #include <stdlib.h>
+#include <time.h>
+#include <thread>
+#include <chrono>
 
 //cube-lib includes
 #include "cube-lib.h"

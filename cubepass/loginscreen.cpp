@@ -50,7 +50,11 @@ void LoginScreen::on_btnLogin_clicked()
 			this->close();
 		else
 		{
-			//Sleep script
+			this->SetAllButtonsState(false);
+			this->setCursor(Qt::BusyCursor);
+			std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+			this->setCursor(Qt::ArrowCursor);
+			this->SetAllButtonsState(true);
 			ui->lblWarning->show();
 		}
 	}
@@ -96,4 +100,12 @@ std::string LoginScreen::returnUsername()
 std::string LoginScreen::returnPassword()
 {
 	return _password;
+}
+
+void LoginScreen::SetAllButtonsState(bool state)
+{
+	ui->btnCreate->setEnabled(state);
+	ui->btnRestore->setEnabled(state);
+	ui->btnLogin->setEnabled(state);
+	qApp->processEvents();
 }

@@ -33,6 +33,8 @@ private:
 	bool _loggedIn;
 	std::string _username;
 	std::string _password;
+
+	void SetAllButtonsState(bool state);
 };
 
 #endif // LOGINSCREEN_H
