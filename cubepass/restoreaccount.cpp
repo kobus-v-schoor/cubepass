@@ -1,6 +1,5 @@
 #include "restoreaccount.h"
 #include "ui_restoreaccount.h"
-#include <QFileDialog>
 #include "restoreuserexists.h"
 
 RestoreAccount::RestoreAccount(QWidget *parent) :

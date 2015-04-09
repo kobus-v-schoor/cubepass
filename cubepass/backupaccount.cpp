@@ -1,7 +1,6 @@
 #include "backupaccount.h"
 #include "ui_backupaccount.h"
-#include <QFileDialog>
-#include <QDateTime>
+
 
 BackupAccount::BackupAccount(QWidget *parent, std::string username) :
 	QDialog(parent),

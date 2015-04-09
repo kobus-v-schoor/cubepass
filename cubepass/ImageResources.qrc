@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/Logo">
         <file alias="Logo.png">rsc/Logo.png</file>
+        <file alias="Logo_150x150">rsc/Logo_150x150.png</file>
     </qresource>
     <qresource prefix="/Screenshots">
         <file alias="LoginScreen">rsc/Screenshots/LoginScreen.png</file>

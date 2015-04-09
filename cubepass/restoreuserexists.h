@@ -1,7 +1,6 @@
 #ifndef RESTOREUSEREXISTS_H
 #define RESTOREUSEREXISTS_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

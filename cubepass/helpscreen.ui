@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>410</width>
-    <height>442</height>
+    <height>440</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>410</width>
-    <height>400</height>
+    <height>440</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>410</width>
-    <height>490</height>
+    <height>440</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
    <item>
     <widget class="QTabWidget" name="tabTopics">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="WelcomeScreen">
       <attribute name="title">
@@ -51,7 +51,7 @@
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
+            <enum>QSizePolicy::Expanding</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -73,10 +73,10 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="ImageResources.qrc">:/Logo/Logo.png</pixmap>
+            <pixmap resource="ImageResources.qrc">:/Logo/Logo_150x150</pixmap>
            </property>
            <property name="scaledContents">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -86,7 +86,7 @@
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Fixed</enum>
+            <enum>QSizePolicy::Preferred</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
@@ -200,20 +200,11 @@
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
           <widget class="QLabel" name="label_6">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>294</height>
-            </size>
-           </property>
            <property name="text">
             <string/>
            </property>
            <property name="pixmap">
             <pixmap resource="ImageResources.qrc">:/Screenshots/MainWindow</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -314,7 +305,7 @@
             <pixmap resource="ImageResources.qrc">:/Screenshots/Categories</pixmap>
            </property>
            <property name="scaledContents">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -397,6 +388,26 @@
      </item>
      <item>
       <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>

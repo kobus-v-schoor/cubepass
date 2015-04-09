@@ -13,7 +13,14 @@
 #include "cube-lib.h"
 
 //Qt includes
+#include <QDialog>
+#include <QMainWindow>
+#include <QListWidgetItem>
 #include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QFileDialog>
+#include <QDateTime>
 
 //Global declares
 extern std::string SETTINGS_FILE;

@@ -1,7 +1,6 @@
 #ifndef GENERATEPWORD_H
 #define GENERATEPWORD_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

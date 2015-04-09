@@ -1,7 +1,6 @@
 #ifndef HELPSCREEN_H
 #define HELPSCREEN_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {
@@ -21,6 +20,8 @@ private slots:
 	void on_btnPrevious_clicked();
 	void on_btnNext_clicked();
 	void on_chckShow_toggled(bool checked);
+
+	void on_btnClose_clicked();
 
 private:
 	Ui::HelpScreen *ui;

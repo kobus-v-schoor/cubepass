@@ -1,7 +1,6 @@
 #ifndef RESTOREACCOUNT_H
 #define RESTOREACCOUNT_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

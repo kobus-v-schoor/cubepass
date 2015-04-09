@@ -2,7 +2,6 @@
 #define LOGINSCREEN_H
 
 #include "stdafx.h"
-#include <QDialog>
 
 namespace Ui {
 class LoginScreen;

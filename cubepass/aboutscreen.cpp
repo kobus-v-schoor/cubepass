@@ -1,7 +1,5 @@
 #include "aboutscreen.h"
 #include "ui_aboutscreen.h"
-#include <QDesktopServices>
-#include <QUrl>
 
 AboutScreen::AboutScreen(QWidget *parent) :
 	QDialog(parent),

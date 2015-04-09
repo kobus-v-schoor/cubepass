@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "loginscreen.h"
 #include "ui_mainwindow.h"
+#include "loginscreen.h"
 #include "newitem.h"
 #include "itemdetails.h"
 #include "categorymanager.h"

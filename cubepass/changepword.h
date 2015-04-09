@@ -1,7 +1,6 @@
 #ifndef CHANGEPWORD_H
 #define CHANGEPWORD_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

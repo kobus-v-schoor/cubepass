@@ -61,6 +61,7 @@ FORMS += loginscreen.ui \
     generatepword.ui
 
 RESOURCES += ImageResources.qrc
+win32 : RC_FILE = "./rsc/WindowExecIcon.rc"
 
 SOURCES += "/home/cube/repos/cube-lib/include/cube-lib-src.cpp"
 INCLUDEPATH += "/home/cube/repos/cube-lib/include"

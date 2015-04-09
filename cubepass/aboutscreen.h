@@ -1,7 +1,7 @@
 #ifndef ABOUTSCREEN_H
 #define ABOUTSCREEN_H
 
-#include <QDialog>
+#include "stdafx.h"
 
 namespace Ui {
 class AboutScreen;

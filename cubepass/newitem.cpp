@@ -1,6 +1,5 @@
 #include "newitem.h"
 #include "ui_newitem.h"
-#include "stdafx.h"
 #include "generatepword.h"
 
 NewItem::NewItem(QWidget *parent, std::string username, std::string password) :

@@ -1,7 +1,6 @@
 #ifndef BACKUPACCOUNT_H
 #define BACKUPACCOUNT_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

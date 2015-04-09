@@ -1,6 +1,5 @@
 #include "helpscreen.h"
 #include "ui_helpscreen.h"
-#include <QMessageBox>
 
 HelpScreen::HelpScreen(QWidget *parent) :
 	QDialog(parent),
@@ -54,4 +53,9 @@ void HelpScreen::on_chckShow_toggled(bool checked)
 		_iniFile.ChangeProperty("Startup", "ShowHelp", "false");
 
 	_iniFile.ApplyChanges();
+}
+
+void HelpScreen::on_btnClose_clicked()
+{
+	this->close();
 }

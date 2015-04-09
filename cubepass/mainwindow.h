@@ -2,11 +2,6 @@
 #define MAINWINDOW_H
 
 #include "stdafx.h"
-#include <QMainWindow>
-#include <QListWidgetItem>
-#include <QLabel>
-#include <QDesktopServices>
-#include <QUrl>
 
 namespace Ui {
 class MainWindow;

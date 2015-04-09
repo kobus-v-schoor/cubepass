@@ -1,9 +1,8 @@
 #ifndef CATEGORYMANAGER_H
 #define CATEGORYMANAGER_H
 
-#include <QDialog>
 #include"stdafx.h"
-#include <QListWidgetItem>
+
 
 namespace Ui {
 class CategoryManager;

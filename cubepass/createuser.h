@@ -1,7 +1,6 @@
 #ifndef CREATEUSER_H
 #define CREATEUSER_H
 
-#include <QDialog>
 #include "stdafx.h"
 
 namespace Ui {

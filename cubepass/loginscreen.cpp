@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "loginscreen.h"
 #include "ui_loginscreen.h"
 #include "createuser.h"
