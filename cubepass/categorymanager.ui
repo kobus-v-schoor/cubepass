@@ -3,7 +3,7 @@
  <class>CategoryManager</class>
  <widget class="QDialog" name="CategoryManager">
   <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
+   <enum>Qt::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -104,6 +104,13 @@
    </item>
    <item>
     <widget class="QListWidget" name="lstCategories"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnClose">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

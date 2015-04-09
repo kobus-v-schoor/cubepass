@@ -3,7 +3,7 @@
  <class>GeneratePword</class>
  <widget class="QDialog" name="GeneratePword">
   <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
+   <enum>Qt::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>

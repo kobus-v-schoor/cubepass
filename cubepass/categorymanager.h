@@ -20,6 +20,7 @@ private slots:
 	void on_btnAdd_clicked();
 	void on_btnDelete_clicked();
 	void on_lstCategories_itemClicked(QListWidgetItem *item);
+	void on_btnClose_clicked();
 
 private:
 	Ui::CategoryManager *ui;

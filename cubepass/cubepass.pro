@@ -63,5 +63,5 @@ FORMS += loginscreen.ui \
 RESOURCES += ImageResources.qrc
 win32 : RC_FILE = "./rsc/WindowExecIcon.rc"
 
-SOURCES += "/home/cube/repos/cube-lib/include/cube-lib-src.cpp"
-INCLUDEPATH += "/home/cube/repos/cube-lib/include"
+SOURCES += "$(CUBE-LIB)/include/cube-lib-src.cpp"
+INCLUDEPATH += "$(CUBE-LIB)/include"

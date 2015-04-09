@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>HelpScreen</class>
  <widget class="QDialog" name="HelpScreen">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -116,7 +119,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Welcome to CubePass! Thank you for installing CubePass, remember to donate to the developer if you like this software :) If you have any bugs to report, please feel free to contact me (contact details in About screen). Press Next to go to the next page of the help screen. </string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thank you for installing, remember to donate to the developer if you find this software useful :) If you have any bugs to report, please feel free to contact me (contact details in About screen). Press Next to go to the next page.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -182,7 +185,7 @@
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the login screen. From here you can create your first user profile, or you can restore a previous profile if you have made a backup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the login screen. From here you can create your initial user profile, or you can restore a previous profile if you have made a backup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -259,7 +262,7 @@
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>This is the main window. From here you can add new items, manage your categories and access extra functions from the menu bar (such as backups)</string>
+            <string>This is the main window. From here you can add new items, manage your categories and access additional functions from the menu bar (such as backups)</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
@@ -348,7 +351,7 @@
          <item>
           <widget class="QLabel" name="label_11">
            <property name="text">
-            <string>With CubePass you can easily create custom categories to organize your items. Then, by selecting the category from the list in the main window, it will only show items belonging to that category.</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;With CubePass you can easily create custom categories to organise your items. Then, by selecting the category from the list in the main window, it will only show items belonging to that category.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>

@@ -128,3 +128,8 @@ void CategoryManager::on_lstCategories_itemClicked(QListWidgetItem *item)
 {
 	ui->btnDelete->setEnabled(true);
 }
+
+void CategoryManager::on_btnClose_clicked()
+{
+	this->close();
+}

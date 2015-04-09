@@ -60,7 +60,7 @@ void LoginScreen::on_btnLogin_clicked()
 	else
 	{
 		std::string message = "The user \"" + _username + "\" does not exist. "
-				"to create a new user simply press the \"Create user\" button "
+				"To create a new user click on the \"Create user\" button "
 				"on the login screen.";
 		QMessageBox msgB(QMessageBox::Warning, "User does not exist", message.c_str(),
 						 QMessageBox::Ok, this);

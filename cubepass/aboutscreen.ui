@@ -3,15 +3,27 @@
  <class>AboutScreen</class>
  <widget class="QDialog" name="AboutScreen">
   <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
+   <enum>Qt::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>385</width>
-    <height>322</height>
+    <width>353</width>
+    <height>301</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>353</width>
+    <height>301</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>353</width>
+    <height>301</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>About CubePass</string>
@@ -20,87 +32,67 @@
    <iconset resource="ImageResources.qrc">
     <normaloff>:/Logo/Logo.png</normaloff>:/Logo/Logo.png</iconset>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>141</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="ImageResources.qrc">:/Logo/Logo.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>140</y>
-     <width>361</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>You are free to use, modify and distribute this software in any way you choose as long as you acknowledge the original author. Thank you for using CubePass. If you have any bugs to report or any questions feel free to contact me.</string>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnDonate">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>290</y>
-     <width>361</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Buy the developer some more RAM :)</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>20</y>
-     <width>201</width>
-     <height>65</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>CubePass v2.0</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Author: Kobus van Schoor</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>pbscube@gmail.com</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ImageResources.qrc">:/Logo/Logo_150x150</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>CubePass v2.0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Author: Kobus van Schoor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>pbscube@gmail.com</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>You are free to use, modify and distribute this software in any way you choose, as long as the original author is recognised. Thank you for using CubePass. If you have any bugs to report or any questions feel free to contact me.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnDonate">
+     <property name="text">
+      <string>Buy the developer some more RAM :)</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources>
   <include location="ImageResources.qrc"/>

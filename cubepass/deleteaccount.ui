@@ -3,7 +3,7 @@
  <class>DeleteAccount</class>
  <widget class="QDialog" name="DeleteAccount">
   <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
+   <enum>Qt::WindowModal</enum>
   </property>
   <property name="geometry">
    <rect>

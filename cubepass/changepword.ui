@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>ChangePword</class>
  <widget class="QDialog" name="ChangePword">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>383</width>
-    <height>213</height>
+    <width>288</width>
+    <height>225</height>
    </rect>
   </property>
   <property name="windowTitle">
