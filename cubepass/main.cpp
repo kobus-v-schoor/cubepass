@@ -60,6 +60,13 @@ void CreateDataFiles()
 		temp += getenv("USERPROFILE");
         temp += "\\Documents\\CubePass\"";
 		system(temp.c_str());
+
+		QMessageBox msgB(QMessageBox::Information, "Data location",
+						 "Because the PC is running Windows the location for "
+						 "all CubePass' settings will be located in a folder named "
+						 "\"CubePass\" under you Documents folder. This is done so "
+						 "that admin rights are not needed when running CubePass.");
+		msgB.exec();
 	}
 	std::ofstream fileCreate(SETTINGS_FILE);
 	fileCreate.close();
