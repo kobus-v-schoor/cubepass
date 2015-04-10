@@ -7,4 +7,5 @@
 [username/item1]
 	$Category=category
 	$Username=encrypted
-	$Password=password
+	$Password=encrypted
+	$Notes=encrypted (won't exist if notes are empty)

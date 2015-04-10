@@ -24,7 +24,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Backing-up your account will alow you to restore it again at a later stadium to this or any other PC with CubePass installed.</string>
+      <string>Backing-up your profile will alow you to restore it again at a later stadium to this or any other PC with CubePass installed.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

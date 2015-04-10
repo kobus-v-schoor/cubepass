@@ -24,24 +24,26 @@ void BackupAccount::on_btnCancel_clicked()
 void BackupAccount::on_btnBrowse_clicked()
 {
 	QFileDialog saveDialog;
-	std::string _filepath = saveDialog.getSaveFileName(this,"Choose where to save backup",
-													   "", "Backup file (*.dat)").toStdString();
-	if (_filepath.empty())
+	QString _filepath = saveDialog.getSaveFileName(this,"Choose where to save backup",
+													   "", "Backup file (*.dat)");
+	if (_filepath.isEmpty())
 		return;
 
-	int letter = _filepath.size() - 1;
-	std::string temp;
-	for (; (letter > 0) && (temp != ".dat"); letter--)
-		temp = _filepath[letter] + temp;
-
-	if (temp != ".dat")
+	if (!_filepath.endsWith(".dat"))
 		_filepath += ".dat";
 
-	ui->edtFilepath->setText(_filepath.c_str());
+	ui->edtFilepath->setText(_filepath);
 }
 
 void BackupAccount::on_btnBackup_clicked()
 {
+	QString temp = ui->edtFilepath->text();
+
+	if (!temp.endsWith(".dat"))
+		temp += ".dat";
+
+	ui->edtFilepath->setText(temp);
+
 	std::ofstream _fileOut(ui->edtFilepath->text().toStdString().c_str());
 	if (!_fileOut.is_open())
 	{

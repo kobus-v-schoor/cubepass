@@ -6,3 +6,4 @@
 	$Category=category
 	$Username=encrypted
 	$Password=encrypted
+	$Notes=encrypted (won't exist if notes are empty)

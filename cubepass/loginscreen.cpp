@@ -49,12 +49,14 @@ void LoginScreen::on_btnLogin_clicked()
 			this->close();
 		else
 		{
+			ui->lblWarning->setText("Decrypting...");
+			ui->lblWarning->show();
 			this->SetAllButtonsState(false);
 			this->setCursor(Qt::BusyCursor);
 			std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 			this->setCursor(Qt::ArrowCursor);
 			this->SetAllButtonsState(true);
-			ui->lblWarning->show();
+			ui->lblWarning->setText("Incorrect password");
 		}
 	}
 	else

@@ -102,7 +102,8 @@ void NewItem::on_btnGenerate_clicked()
 {
 	GeneratePword generateP(this);
 	generateP.exec();
-	ui->edtPassword->setText(generateP.ReturnPassword());
+	if (!generateP.ReturnPassword().isEmpty())
+		ui->edtPassword->setText(generateP.ReturnPassword());
 }
 
 void NewItem::on_edtNotes_textChanged()
