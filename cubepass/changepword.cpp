@@ -68,6 +68,7 @@ void ChangePword::on_btnChange_clicked()
 
 		this->Recrypt("Username", temp);
 		this->Recrypt("Password", temp);
+		this->Recrypt("Notes", temp);
 	}
 
 	_iniFile.ChangeProperty("Users", _username, cube::Encryption(ui->edtPassword->text().toStdString(),
@@ -85,8 +86,11 @@ void ChangePword::on_btnChange_clicked()
 
 void ChangePword::Recrypt(std::string var, std::string item)
 {
-	std::string temp = cube::Decryption(_datFile.ReturnVar(_username + "/" + item, var),
-										_password);
+	std::string temp = _datFile.ReturnVar(_username + "/" + item, var);
+	if (temp.empty())
+		return;
+
+	temp = cube::Decryption(temp, _password);
 	temp = cube::Encryption(temp, ui->edtPassword->text().toStdString());
 	_datFile.ChangeVarValue(_username + "/" + item, var, temp);
 }

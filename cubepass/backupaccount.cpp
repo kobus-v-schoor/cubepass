@@ -86,6 +86,7 @@ void BackupAccount::on_btnBackup_clicked()
 		_backup.CreateVar(temp, "Category", _datFile.ReturnVar(_userSection, "Category"));
 		_backup.CreateVar(temp, "Username", _datFile.ReturnVar(_userSection, "Username"));
 		_backup.CreateVar(temp, "Password", _datFile.ReturnVar(_userSection, "Password"));
+		_backup.CreateVar(temp, "Notes", _datFile.ReturnVar(_userSection, "Notes"));
 	}
 	_backup.ApplyChanges();
 	std::string message = "Your backup was successfully made to ";

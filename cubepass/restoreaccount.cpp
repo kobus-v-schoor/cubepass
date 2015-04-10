@@ -92,6 +92,7 @@ void RestoreAccount::on_btnRestore_clicked()
 		std::string _tempCategory = _backup.ReturnVar(temp, "Category");
 		std::string _tempUsername = _backup.ReturnVar(temp, "Username");
 		std::string _tempPassword = _backup.ReturnVar(temp, "Password");
+		std::string _tempNotes = _backup.ReturnVar(temp, "Notes");
 
 		if (_tempCategory.empty() ||
 				_tempUsername.empty() ||
@@ -103,6 +104,7 @@ void RestoreAccount::on_btnRestore_clicked()
 		_datFile.CreateVar(sectionName, "Category", _tempCategory);
 		_datFile.CreateVar(sectionName, "Username", _tempUsername);
 		_datFile.CreateVar(sectionName, "Password", _tempPassword);
+		_datFile.CreateVar(sectionName, "Notes", _tempNotes);
 	}
 
 	_restoredSomething = true;
