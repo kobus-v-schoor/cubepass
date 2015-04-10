@@ -24,6 +24,8 @@ private slots:
 	void on_btnCreate_clicked();
 	void on_btnGenerate_clicked();
 
+	void on_edtNotes_textChanged();
+
 private:
 	Ui::NewItem *ui;
 	cube::dataBase _datFile;

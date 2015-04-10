@@ -18,6 +18,8 @@ ItemDetails::ItemDetails(QWidget *parent, std::string itemName, std::string user
 	ui->edtItemName->setText(_itemName.c_str());
 	ui->edtUsername->setText(cube::Decryption(_datFile.ReturnVar(sectionName, "Username"), _password).c_str());
 	ui->edtPassword->setText(cube::Decryption(_datFile.ReturnVar(sectionName, "Password"), _password).c_str());
+	ui->edtNotes->setPlainText(cube::Decryption(_datFile.ReturnVar(sectionName, "Notes"), _password).c_str());
+	ui->edtNotes->setPlainText(ui->edtNotes->toPlainText().replace("\\n", "\n", Qt::CaseSensitive));
 	std::string _categories = _datFile.ReturnVar(_username, "Categories");
 	if (_categories == "empty")
 		_categories.clear();
@@ -56,6 +58,7 @@ void ItemDetails::on_btnEdit_clicked()
 		ui->edtItemName->setReadOnly(false);
 		ui->edtUsername->setReadOnly(false);
 		ui->edtPassword->setReadOnly(false);
+		ui->edtNotes->setReadOnly(false);
 		ui->cmbCategory->setEnabled(true);
 		ui->btnEdit->setText("Save changes");
 		ui->btnClose->setText("Delete");
@@ -113,11 +116,22 @@ void ItemDetails::on_btnEdit_clicked()
 																	  _password));
 	_datFile.ChangeVarValue(sectionName, "Password", cube::Encryption(ui->edtPassword->text().toStdString(),
 																	  _password));
+
+	if (ui->edtNotes->toPlainText().isEmpty())
+		_datFile.DeleteVar(sectionName, "Notes");
+	else
+	{
+		_datFile.CreateVar(sectionName, "Notes");
+		QString temp = ui->edtNotes->toPlainText().replace("\n", "\\n", Qt::CaseSensitive);
+		_datFile.ChangeVarValue(sectionName, "Notes", cube::Encryption(temp.toStdString(), _password));
+	}
+
 	_datFile.ApplyChanges();
 
 	ui->edtItemName->setReadOnly(true);
 	ui->edtUsername->setReadOnly(true);
 	ui->edtPassword->setReadOnly(true);
+	ui->edtNotes->setReadOnly(true);
 	ui->cmbCategory->setEnabled(false);
 	ui->btnEdit->setText("Edit");
 	ui->btnClose->setText("Close");
