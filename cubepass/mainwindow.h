@@ -16,7 +16,7 @@ public:
 	~MainWindow();
 
 private slots:
-	void on_btnNewItem_clicked();
+	void on_btnCreateItem_clicked();
 	void on_cmbCategory_currentIndexChanged(int index);
 	void on_lstItems_itemDoubleClicked(QListWidgetItem *item);
 	void on_btnManageCt_clicked();

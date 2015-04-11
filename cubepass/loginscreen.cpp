@@ -7,10 +7,19 @@ LoginScreen::LoginScreen(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::LoginScreen),
 	_iniFile(SETTINGS_FILE),
-	_loggedIn(false)
+	_loggedIn(false),
+	_settingINI(true)
 {
 	ui->setupUi(this);
 	ui->lblWarning->hide();
+	ui->chckRemeber->setChecked(!(_iniFile.ReturnValue("Startup",
+													 "RememberUsername") == "false"));
+	if (ui->chckRemeber->isChecked()){
+		ui->edtUsername->setText(_iniFile.ReturnValue("Startup",
+													  "RememberUsername").c_str());
+		ui->edtPassword->setFocus();
+	}
+	_settingINI = false;
 }
 
 LoginScreen::~LoginScreen()
@@ -57,6 +66,8 @@ void LoginScreen::on_btnLogin_clicked()
 			this->setCursor(Qt::ArrowCursor);
 			this->SetAllButtonsState(true);
 			ui->lblWarning->setText("Incorrect password");
+			ui->edtPassword->clear();
+			ui->edtPassword->setFocus();
 		}
 	}
 	else
@@ -109,4 +120,19 @@ void LoginScreen::SetAllButtonsState(bool state)
 	ui->btnRestore->setEnabled(state);
 	ui->btnLogin->setEnabled(state);
 	qApp->processEvents();
+}
+
+void LoginScreen::on_chckRemeber_toggled(bool checked)
+{
+	if (_settingINI)
+		return;
+
+	if (checked){
+		_iniFile.ChangeProperty("Startup", "RememberUsername",
+								ui->edtUsername->text().toStdString());
+	}
+	else
+		_iniFile.ChangeProperty("Startup", "RememberUsername", "false");
+
+	_iniFile.ApplyChanges();
 }

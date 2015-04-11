@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>405</width>
-    <height>187</height>
+    <height>155</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,10 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>You can restore any backup made by CubePass (even if it was made on another PC or OS). The user profile in the backup will be added to this PC's database, and will be accessible as a normal profile on this PC. The new restored profile will keep its original username and password. </string>
+      <string>Any backup made by CubePass can be restored and the backed up profile will be added to this PC's database along with its password (along with all items that we're backup up with it)</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

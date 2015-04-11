@@ -75,7 +75,7 @@
    <item>
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>You are free to use, modify and distribute this software in any way you choose, as long as the original author is recognised. Thank you for using CubePass. If you have any bugs to report or any questions feel free to contact me.</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thank you for using CubePass. Should you have any bugs to report or any questions, feel free to contact me.&lt;/p&gt;&lt;p&gt;You are free to use, modify and distribute this software in any way you choose, as long as the original author is recognised.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

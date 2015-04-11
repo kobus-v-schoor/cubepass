@@ -37,6 +37,7 @@ void CategoryManager::on_btnAdd_clicked()
 {
 	_editing = !_editing;
 	ui->btnDelete->setEnabled(!_editing);
+	ui->btnClose->setEnabled(!_editing);
 	ui->edtCategory->setVisible(_editing);
 	ui->lstCategories->setEnabled(!_editing);
 
@@ -66,9 +67,12 @@ void CategoryManager::on_btnAdd_clicked()
 		ui->edtCategory->clear();
 		ui->btnDelete->setEnabled(false);
 		ui->lstCategories->setCurrentRow(-1);
+		ui->btnAdd->setText("Add");
 	}
-	else
+	else{
 		ui->edtCategory->setFocus();
+		ui->btnAdd->setText("Save");
+	}
 }
 
 void CategoryManager::on_btnDelete_clicked()

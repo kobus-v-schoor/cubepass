@@ -26,12 +26,15 @@ private slots:
 	void on_btnCreate_clicked();
 	void on_btnRestore_clicked();
 
+	void on_chckRemeber_toggled(bool checked);
+
 private:
 	Ui::LoginScreen *ui;
 	cube::iniParser _iniFile;
 	bool _loggedIn;
 	std::string _username;
 	std::string _password;
+	bool _settingINI;
 
 	void SetAllButtonsState(bool state);
 };

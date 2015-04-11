@@ -100,7 +100,7 @@ void MainWindow::UpdateItems()
 	}
 }
 
-void MainWindow::on_btnNewItem_clicked()
+void MainWindow::on_btnCreateItem_clicked()
 {
 	NewItem newItem(this, _username, _password);
 	newItem.exec();

@@ -23,22 +23,22 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="btnNewItem">
-      <property name="toolTip">
-       <string>Add a new item to your account</string>
-      </property>
-      <property name="text">
-       <string>Add new item</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="btnManageCt">
       <property name="toolTip">
        <string>Manage your categories</string>
       </property>
       <property name="text">
        <string>Manage categories</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnCreateItem">
+      <property name="toolTip">
+       <string>Add a new item to your account</string>
+      </property>
+      <property name="text">
+       <string>Create item</string>
       </property>
      </widget>
     </item>

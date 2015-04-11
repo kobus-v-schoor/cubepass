@@ -1,8 +1,15 @@
-#-------------------------------------------------
+# ---------------------------------------------------------------------
+# CubePass V2.0.0
 #
-# Project created by QtCreator 2015-03-08T22:31:46
+# Author: Kobus van Schoor alias Cube777
+# You are free to use, modify and distribute this software
+# in any way you choose as long as you acknowledge the original author.
 #
-#-------------------------------------------------
+# You need to set a environment variable in this projects settings
+# name "CUBE-LIB" (without quotes) pointing to the root DIR of your
+# cube-lib repository folder.
+# ---------------------------------------------------------------------
+
 
 QT += core gui
 
