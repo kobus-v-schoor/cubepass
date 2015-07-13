@@ -32,11 +32,12 @@ Fedora: sudo yum install make gcc gcc-c++ qt4
 
 4. Open the terminal in the folder where you downloaded this repository (Open terminal and run <code>cd /path/to/repository</code>) and run the following commands:
 <pre>
+cd cubepass
 qmake -makefile cubepass.pro
 make release
 sudo make install
 </pre>
-5. That's it! You cun now run CubePass form the terminal with <code>cubepass</code> or your application menu or launcher.
+5. That's it! You can now run CubePass from the terminal with <code>cubepass</code> or from your applications menu.
 
 ###Windows users wishing to build from source
 If you don't want to use the installed on Sourceforge follow the instructions for Linux and OSX users above, except you will need the complete Qt creator suite available from https://www.qt.io/download-open-source/ and will build from inside QtCreator, not using make.

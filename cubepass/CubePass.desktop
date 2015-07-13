@@ -6,4 +6,4 @@ Comment=A secure, lightweight password manager
 Exec=cubepass
 Icon=/usr/share/pixmaps/cubepass.png
 Terminal=false
-Categories=Accessories
+Categories=Utility
