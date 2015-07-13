@@ -27,7 +27,7 @@ void CreateUser::on_btnCreate_clicked()
 	std::string username = ui->edtUsername->text().toStdString();
 	std::string password = ui->edtPassword->text().toStdString();
 	std::string message;
-	if (_iniFile.AddProperty("Users", username, cube::Encryption(password, password)))
+    if (_iniFile.AddProperty("Users", username, cube::strEncrypt(password, password)))
 	{
 		_datFile.CreateSection(username);
 		_datFile.CreateVar(username, "Categories");

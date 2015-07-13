@@ -16,9 +16,9 @@ ItemDetails::ItemDetails(QWidget *parent, std::string itemName, std::string user
 
 	std::string sectionName = _username + "/" + _itemName;
 	ui->edtItemName->setText(_itemName.c_str());
-	ui->edtUsername->setText(cube::Decryption(_datFile.ReturnVar(sectionName, "Username"), _password).c_str());
-	ui->edtPassword->setText(cube::Decryption(_datFile.ReturnVar(sectionName, "Password"), _password).c_str());
-	ui->edtNotes->setPlainText(cube::Decryption(_datFile.ReturnVar(sectionName, "Notes"), _password).c_str());
+    ui->edtUsername->setText(cube::strDecrypt(_datFile.ReturnVar(sectionName, "Username"), _password).c_str());
+    ui->edtPassword->setText(cube::strDecrypt(_datFile.ReturnVar(sectionName, "Password"), _password).c_str());
+    ui->edtNotes->setPlainText(cube::strDecrypt(_datFile.ReturnVar(sectionName, "Notes"), _password).c_str());
 	ui->edtNotes->setPlainText(ui->edtNotes->toPlainText().replace("\\n", "\n", Qt::CaseSensitive));
 	std::string _categories = _datFile.ReturnVar(_username, "Categories");
 	if (_categories == "empty")
@@ -112,9 +112,9 @@ void ItemDetails::on_btnEdit_clicked()
 	}
 
 	_datFile.ChangeVarValue(sectionName, "Category", ui->cmbCategory->currentText().toStdString());
-	_datFile.ChangeVarValue(sectionName, "Username", cube::Encryption(ui->edtUsername->text().toStdString(),
+    _datFile.ChangeVarValue(sectionName, "Username", cube::strEncrypt(ui->edtUsername->text().toStdString(),
 																	  _password));
-	_datFile.ChangeVarValue(sectionName, "Password", cube::Encryption(ui->edtPassword->text().toStdString(),
+    _datFile.ChangeVarValue(sectionName, "Password", cube::strEncrypt(ui->edtPassword->text().toStdString(),
 																	  _password));
 
 	if (ui->edtNotes->toPlainText().isEmpty())
@@ -123,7 +123,7 @@ void ItemDetails::on_btnEdit_clicked()
 	{
 		_datFile.CreateVar(sectionName, "Notes");
 		QString temp = ui->edtNotes->toPlainText().replace("\n", "\\n", Qt::CaseSensitive);
-		_datFile.ChangeVarValue(sectionName, "Notes", cube::Encryption(temp.toStdString(), _password));
+        _datFile.ChangeVarValue(sectionName, "Notes", cube::strEncrypt(temp.toStdString(), _password));
 	}
 
 	_datFile.ApplyChanges();

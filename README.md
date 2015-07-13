@@ -1,5 +1,5 @@
 ## CubePass
-### Current version: v2.0.0
+### Current version: v3.0.0
 
 CubePass is a lightweight, cross-platform, secure password manager. It works complete offline, so all you data is safe encrypted and stored on your PC. CubePass is extremely easy to use and works on Windows, Linux and OSX (Linux and OSX currently needs to build the binaries, see below for instructions). CubePass regularly updated and is open for bug-fixes.
 
@@ -14,29 +14,29 @@ CubePass has the following features:
 
 No more forgetting your passwords! CubePass is completely free, ad-free and will always stay like that! (Donations welcome ;)
 
+##Download for Windows:
 [![Download CubePass](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/cubepass/files/latest/download)
 
 ###Linux and OSX users
-While I'm writing the installer for these two OS's you will have to build the binaries yourself, but this is very easy so you have nothing to fear! 
+While I'm writing the installer for these two OS's you will have to build the binaries yourself, but this is very easy so you have nothing to fear!
 
-1. Clone (download) the cube-lib repository (located at https://github.com/Cube777/cube-lib) to your PC
+1. Clone (download) the cube-lib repository (located at https://github.com/Cube777/cube-lib, if you have git installed run <code>git clone https://github.com/Cube777/cube-lib</code>) to your PC
 
-2. Clone (download) this (CubePass) repository to your PC
+2. Follow the building instructions provided by the repo (Read the <code>README.md</code> in it for instructions), use the default options if you can, it makes configuring easier
 
-3. Download and install the Qt libraries along with Qt creator (first look in your respective distro's repositories to check if "Qt creator" isn't listed there, if not go to this link https://www.qt.io/download-open-source/ and download)
+3. Download and install the Qt 4(or 5) libraries and headers (qtcreator not necessary). Examples:
+<pre>Ubuntu (or any Debian-derivative): sudo apt-get install build-essential libqt4-dev libqt4-dev-bin qt4-qmake
+Arch-linux: sudo pacman -S base-devel qt4
+Fedora: sudo yum install make gcc gcc-c++ qt4
+</pre>
 
-4. After Qt has finished installing, open "cubepass.pro" located in the "cubepass" folder of this repository
+4. Open the terminal in the folder where you downloaded this repository (Open terminal and run <code>cd /path/to/repository</code>) and run the following commands:
+<pre>
+qmake -makefile cubepass.pro
+make release
+sudo make install
+</pre>
+5. That's it! You cun now run CubePass form the terminal with <code>cubepass</code> or your application menu or launcher.
 
-5. Configure you project (default settings will work)
-
-6. Go to the "Projects" section on the left side of the screen and make sure to change "Debug" to "Release" on right next to "Edit build configuration"
-
-7. Scroll down until you see "Build environment" and click on details
-
-8. Click then on "Add", and type "CUBE-LIB" (without quotes) and press enter
-
-9. Search for "CUBE-LIB" in the list and then double-click on "<VALUE>" right next to it
-
-10. In the value field type the path to the folder where you downloaded the cube-lib repository etc "/home/cube/repos/cube-lib" and press enter when you are done
-
-11. Thats it! Now press the "Build" button (hammer icon) and CubePass will build. IF you used the default build settings your build will be located in the CubePass repository folder (The executable will be named "cubepass"). Just run the executable and thats it! I will write an installer for *nix systems pretty soon so just hold on tight!
+###Windows users wishing to build from source
+If you don't want to use the installed on Sourceforge follow the instructions for Linux and OSX users above, except you will need the complete Qt creator suite available from https://www.qt.io/download-open-source/ and will build from inside QtCreator, not using make.

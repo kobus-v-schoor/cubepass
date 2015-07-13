@@ -48,9 +48,9 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="lblVersion">
          <property name="text">
-          <string>CubePass v2.0</string>
+          <string>CubePass</string>
          </property>
         </widget>
        </item>

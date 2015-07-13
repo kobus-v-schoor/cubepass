@@ -1,13 +1,13 @@
 # ---------------------------------------------------------------------
-# CubePass V2.0.0
+# CubePass V3.0.0
 #
 # Author: Kobus van Schoor alias Cube777
 # You are free to use, modify and distribute this software
 # in any way you choose as long as you acknowledge the original author.
 #
-# You need to set a environment variable in this projects settings
-# name "CUBE-LIB" (without quotes) pointing to the root DIR of your
-# cube-lib repository folder.
+# You need to change the CUBE_DIR variable below (indicated by comment)
+# to the dir that you installed cube-lib to if you modified the default
+# install dir
 # ---------------------------------------------------------------------
 
 
@@ -18,7 +18,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = cubepass
 TEMPLATE = app
 
-CONFIG += c++11
+CONFIG += c++11 debug_and_release
 
 SOURCES += main.cpp\
     loginscreen.cpp \
@@ -70,5 +70,35 @@ FORMS += loginscreen.ui \
 RESOURCES += ImageResources.qrc
 win32 : RC_FILE = "./rsc/WindowExecIcon.rc"
 
-SOURCES += "$(CUBE-LIB)/include/cube-lib-src.cpp"
-INCLUDEPATH += "$(CUBE-LIB)/include"
+# ---------------------------------------------------------------------
+# Change the value CUBE_DIR below to the install prefix you selected when running CMake.
+# If you used the default CMake settings you do not need to change anything.
+# ---------------------------------------------------------------------
+
+unix: CUBE_DIR = /usr/local/
+win32 : CUBE_DIR = $(PROGRAMFILES(x86))/cube-lib
+
+LIBS += -L$$CUBE_DIR/lib/cube-lib -lcube-encrypter -lcube-ini-parser -lcube-database
+
+INCLUDEPATH += $$CUBE_DIR/include/cube-lib
+DEPENDPATH += $$CUBE_DIR/include/cube-lib
+
+unix {
+TARGET.path = /usr/local/bin
+TARGET.files = cubepass
+
+desktop_file.path = /usr/share/applications
+desktop_file.files = CubePass.desktop
+
+icon.path = /usr/share/pixmaps
+icon.files = rsc/cubepass.png
+
+INSTALLS += desktop_file icon
+}
+
+win32 {
+TARGET.path = $(PROGRAMFILES(x86))/CubePass
+TARGET.files = cubepass.exe
+}
+
+INSTALLS += TARGET

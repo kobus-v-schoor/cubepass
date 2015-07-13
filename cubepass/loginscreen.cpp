@@ -51,7 +51,7 @@ void LoginScreen::on_btnLogin_clicked()
 	std::string _compareStr = _iniFile.ReturnValue("Users", _username);
 	if (!_compareStr.empty())
 	{
-		_loggedIn = (cube::Decryption(_compareStr, _password) ==
+        _loggedIn = (cube::strDecrypt(_compareStr, _password) ==
 					 _password);
 
 		if (_loggedIn)

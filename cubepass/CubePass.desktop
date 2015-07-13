@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=CubePass
+Comment=A secure, lightweight password manager
+Exec=cubepass
+Icon=/usr/share/pixmaps/cubepass.png
+Terminal=false
+Categories=Accessories

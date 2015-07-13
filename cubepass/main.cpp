@@ -3,9 +3,9 @@
 #include <QApplication>
 
 #ifdef _WIN32
-#define ONWIN true
+	#define ONWIN true
 #else
-#define ONWIN false
+	#define ONWIN false
 #endif
 
 std::string SETTINGS_FILE;
@@ -37,6 +37,21 @@ int main(int argc, char *argv[])
 		std::ifstream fileCheck(SETTINGS_FILE.c_str());
 		if (!fileCheck.is_open())
 			CreateDataFiles();
+	}
+
+	cube::iniParser _iniFile(SETTINGS_FILE);
+
+	if ((_iniFile.ReturnValue("Startup", "Version") == "2.0.0") && (VERSION != "2.0.0"))
+	{
+		QMessageBox msgB(QMessageBox::Critical, "Incompatible versions",
+						 "Because of large changes to the "
+						 "encryption your database file is incompatible with the current version of this "
+						 "program. Currently there is no solution  but to downgrade to V2.0.0 and manually "
+						 "store your passwords, delete the CubePass config folder (~/.cubepass and Documents"
+						 "\\CubePass for *nix and Windows respectively) and re-install the newest version",
+						 QMessageBox::Ok, NULL);
+		msgB.exec();
+		return 0;
 	}
 
 	MainWindow mainWin;

@@ -6,6 +6,9 @@ AboutScreen::AboutScreen(QWidget *parent) :
 	ui(new Ui::AboutScreen)
 {
 	ui->setupUi(this);
+	std::string temp = "CubePass ";
+	temp += VERSION;
+	ui->lblVersion->setText(temp.c_str());
 }
 
 AboutScreen::~AboutScreen()
