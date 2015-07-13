@@ -73,15 +73,19 @@ win32 : RC_FILE = "./rsc/WindowExecIcon.rc"
 # ---------------------------------------------------------------------
 # Change the value CUBE_DIR below to the install prefix you selected when running CMake.
 # If you used the default CMake settings you do not need to change anything.
+# Make sure your install path for cube-lib DOES NOT HAVE SPACES
 # ---------------------------------------------------------------------
 
 unix: CUBE_DIR = /usr/local/
-win32 : CUBE_DIR = $(PROGRAMFILES(x86))/cube-lib
+win32 : CUBE_DIR = C:/cube-lib
 
-LIBS += -L$$CUBE_DIR/lib/cube-lib -lcube-encrypter -lcube-ini-parser -lcube-database
+unix: LIBS += -L$$CUBE_DIR/lib/cube-lib -lcube-encrypter -lcube-ini-parser -lcube-database
 
-INCLUDEPATH += $$CUBE_DIR/include/cube-lib
-DEPENDPATH += $$CUBE_DIR/include/cube-lib
+win32:CONFIG(release, debug|release): LIBS += -L$$CUBE_DIR/lib/ -llibcube-encrypter -llibcube-ini-parser -llibcube-database
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$CUBE_DIR/lib/ -llibcube-encrypterd -llibcube-ini-parserd -llibcube-databased
+
+INCLUDEPATH += $$CUBE_DIR/include
+DEPENDPATH += $$CUBE_DIR/include
 
 unix {
 TARGET.path = /usr/local/bin
@@ -97,7 +101,7 @@ INSTALLS += desktop_file icon
 }
 
 win32 {
-TARGET.path = $(PROGRAMFILES(x86))/CubePass
+TARGET.path = '$(PROGRAMFILES)/CubePass'
 TARGET.files = cubepass.exe
 }
 
