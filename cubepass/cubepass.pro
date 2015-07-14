@@ -18,7 +18,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = cubepass
 TEMPLATE = app
 
-CONFIG += c++11 debug_and_release
+CONFIG += debug_and_release
+QMAKE_CXXFLAGS += -std=c++0x
 
 SOURCES += main.cpp\
     loginscreen.cpp \
