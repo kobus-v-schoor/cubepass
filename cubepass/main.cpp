@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			CreateDataFiles();
 	}
 
-	cube::iniParser _iniFile(SETTINGS_FILE);
+	cube::iniParser _iniFile(SETTINGS_FILE.c_str());
 
 	if ((_iniFile.ReturnValue("Startup", "Version") == "2.0.0") && (VERSION != "2.0.0"))
 	{
@@ -66,26 +66,19 @@ void CreateDataFiles()
 	{
         std::string temp = "mkdir \"";
         temp += getenv("HOME");
-        temp += "/.cubepass\"";
+        temp += "/.config/cubepass\"";
 		std::system(temp.c_str());
 	}
 	else
 	{
         std::string temp = "md \"";
-		temp += getenv("USERPROFILE");
-        temp += "\\Documents\\CubePass\"";
+		temp += getenv("APPDATA");
+        temp += "\\CubePass\"";
 		system(temp.c_str());
-
-		QMessageBox msgB(QMessageBox::Information, "Data location",
-						 "Because the PC is running Windows the location for "
-						 "all CubePass' settings will be located in a folder named "
-						 "\"CubePass\" under you Documents folder. This is done so "
-						 "that admin rights are not needed when running CubePass.");
-		msgB.exec();
 	}
-	std::ofstream fileCreate(SETTINGS_FILE);
+	std::ofstream fileCreate(SETTINGS_FILE.c_str());
 	fileCreate.close();
-	fileCreate.open(DATABASE_FILE);
+	fileCreate.open(DATABASE_FILE.c_str());
 	fileCreate.close();
 
 	cube::iniParser _iniFile(SETTINGS_FILE);
