@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	{
 		SETTINGS_FILE = getenv("APPDATA");
 		SETTINGS_FILE += "\\CubePass\\settings.ini";
-        DATABASE_FILE = getenv("USERPROFILE");
+		DATABASE_FILE = getenv("APPDATA");
 		DATABASE_FILE += "\\CubePass\\userdata.dat";
 
 		std::ifstream fileCheck(SETTINGS_FILE.c_str());
