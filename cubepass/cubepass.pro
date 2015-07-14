@@ -101,7 +101,7 @@ INSTALLS += desktop_file icon
 }
 
 win32 {
-TARGET.path = '$(PROGRAMFILES)/CubePass'
+TARGET.path = 'C:/CubePass'
 TARGET.files = cubepass.exe
 }
 
