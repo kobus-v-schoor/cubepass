@@ -23,10 +23,10 @@ While I'm writing the installer for these two OS's you will have to build the bi
 
 2. Follow the building instructions provided by the repo (Read the <code>README.md</code> in it for instructions), use the default options if you can, it makes configuring easier
 
-3. Download and install the Qt 4(or 5) libraries and headers (qtcreator not necessary). Examples:
-<pre>Ubuntu (or any Debian-derivative): sudo apt-get install libqt4-dev libqt4-dev-bin qt4-qmake
-Arch-linux: sudo pacman -S qt4
-Fedora: sudo yum install qt4
+3. Download and install the Qt5 libraries and headers (qtcreator not necessary). Examples:
+<pre>Ubuntu (or any Debian-derivative): sudo apt-get install qtbase5-dev
+Arch-linux: sudo pacman -S qt5-base
+Fedora: sudo yum install qt5-qtbase
 </pre>
 
 4. Open the terminal in the folder where you downloaded this repository (Open terminal and run <code>cd /path/to/repository</code>) and run the following commands:
