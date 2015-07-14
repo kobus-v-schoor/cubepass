@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 	if (!ONWIN)
 	{
         SETTINGS_FILE = getenv("HOME");
-        SETTINGS_FILE += "/.cubepass/settings.ini";
+		SETTINGS_FILE += "/.config/cubepass/settings.ini";
         DATABASE_FILE = getenv("HOME");
-        DATABASE_FILE += "/.cubepass/userdata.dat";
+		DATABASE_FILE += "/.config/cubepass/userdata.dat";
 
 		std::ifstream fileCheck(SETTINGS_FILE.c_str());
 		if (!fileCheck.is_open())
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-        SETTINGS_FILE = getenv("USERPROFILE");
-        SETTINGS_FILE += "\\Documents\\CubePass\\settings.ini";
+		SETTINGS_FILE = getenv("APPDATA");
+		SETTINGS_FILE += "\\CubePass\\settings.ini";
         DATABASE_FILE = getenv("USERPROFILE");
-        DATABASE_FILE += "\\Documents\\CubePass\\userdata.dat";
+		DATABASE_FILE += "\\CubePass\\userdata.dat";
 
 		std::ifstream fileCheck(SETTINGS_FILE.c_str());
 		if (!fileCheck.is_open())

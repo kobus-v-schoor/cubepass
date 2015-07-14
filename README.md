@@ -24,8 +24,9 @@ While I'm writing the installer for these two OS's you will have to build the bi
 2. Follow the building instructions provided by the repo (Read the <code>README.md</code> in it for instructions), use the default options if you can, it makes configuring easier
 
 3. Download and install the Qt5 libraries and headers (qtcreator not necessary). Examples:
-<pre>Ubuntu (or any Debian-derivative): sudo apt-get install qtbase5-dev
-Arch-linux: sudo pacman -S qt5-base
+<pre>
+Ubuntu (or any Debian-derivative): sudo apt-get install qt5-default
+Arch-linux: sudo pacman -S qt5
 Fedora: sudo yum install qt5-qtbase
 </pre>
 
