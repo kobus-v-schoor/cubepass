@@ -25,7 +25,7 @@ private slots:
 
 private:
 	Ui::HelpScreen *ui;
-	cube::iniParser _iniFile;
+	inip::iniParser _iniFile;
 	bool _settingCheck;
 };
 

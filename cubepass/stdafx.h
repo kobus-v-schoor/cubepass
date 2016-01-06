@@ -10,9 +10,9 @@
 #include <chrono>
 
 //cube-lib includes
-#include "cube-lib/cube-encrypter.h"
-#include "cube-lib/cube-ini-parser.h"
-#include "cube-lib/cube-database.h"
+#include <dchain/dchain.h>
+#include <inip.h>
+#include <nihdb/nihdb.h>
 
 //Qt includes
 #include <QDialog>
@@ -27,4 +27,4 @@
 //Global declares
 extern std::string SETTINGS_FILE;
 extern std::string DATABASE_FILE;
-#define VERSION "3.0.0"
+#define VERSION "4.0.0"

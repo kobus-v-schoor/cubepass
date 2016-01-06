@@ -46,7 +46,7 @@ void HelpScreen::on_chckShow_toggled(bool checked)
 					QMessageBox::Ok, this).exec();
 	}
 
-	cube::iniParser _iniFile(SETTINGS_FILE);
+	inip::iniParser _iniFile(SETTINGS_FILE);
 	if (checked)
 		_iniFile.ChangeProperty("Startup", "ShowHelp", "true");
 	else

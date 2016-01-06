@@ -24,8 +24,8 @@ private slots:
 
 private:
 	Ui::CreateUser *ui;
-	cube::iniParser _iniFile;
-	cube::dataBase _datFile;
+	inip::iniParser _iniFile;
+	nihdb::dataBase _datFile;
 };
 
 #endif // CREATEUSER_H

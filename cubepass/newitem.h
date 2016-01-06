@@ -28,7 +28,7 @@ private slots:
 
 private:
 	Ui::NewItem *ui;
-	cube::dataBase _datFile;
+	nihdb::dataBase _datFile;
 	std::string _username;
 	std::string _password;
 

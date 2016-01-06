@@ -24,8 +24,8 @@ private slots:
 
 private:
 	Ui::RestoreAccount *ui;
-	cube::dataBase _datFile;
-	cube::iniParser _iniFile;
+	nihdb::dataBase _datFile;
+	inip::iniParser _iniFile;
 	bool _restoredSomething;
 
 	void ShowError();

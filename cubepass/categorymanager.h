@@ -25,7 +25,7 @@ private slots:
 private:
 	Ui::CategoryManager *ui;
 	std::string _username;
-	cube::dataBase _datFile;
+	nihdb::dataBase _datFile;
 	bool _editing;
 	std::vector<std::string> _categories;
 };

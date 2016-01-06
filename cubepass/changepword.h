@@ -27,8 +27,8 @@ private:
 	Ui::ChangePword *ui;
 	std::string _username;
 	std::string _password;
-	cube::dataBase _datFile;
-	cube::iniParser _iniFile;
+	nihdb::dataBase _datFile;
+	inip::iniParser _iniFile;
 	bool _pwordChanged;
 
 	void UpdateWarning();

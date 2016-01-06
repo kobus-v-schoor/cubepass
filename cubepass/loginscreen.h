@@ -30,7 +30,8 @@ private slots:
 
 private:
 	Ui::LoginScreen *ui;
-	cube::iniParser _iniFile;
+	inip::iniParser _iniFile;
+	nihdb::dataBase _datB;
 	bool _loggedIn;
 	std::string _username;
 	std::string _password;

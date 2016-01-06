@@ -57,8 +57,8 @@ void BackupAccount::on_btnBackup_clicked()
 	}
 	_fileOut.close();
 
-	cube::dataBase _backup(ui->edtFilepath->text().toStdString());
-	cube::iniParser _iniFile(SETTINGS_FILE);
+	nihdb::dataBase _backup(ui->edtFilepath->text().toStdString());
+	inip::iniParser _iniFile(SETTINGS_FILE);
 
 	QDateTime currentTime;
 	currentTime.setDate(QDate::currentDate());

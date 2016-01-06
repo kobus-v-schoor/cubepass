@@ -29,7 +29,7 @@ private:
 	std::string _username;
 	std::string _password;
 	std::string _itemName;
-	cube::dataBase _datFile;
+	nihdb::dataBase _datFile;
 	bool _editing;
 };
 

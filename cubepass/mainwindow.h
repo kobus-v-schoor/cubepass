@@ -33,8 +33,8 @@ private:
 	Ui::MainWindow *ui;
 	std::string _username;
 	std::string _password;
-	cube::iniParser _iniFile;
-	cube::dataBase _datFile;
+	inip::iniParser _iniFile;
+	nihdb::dataBase _datFile;
 	QLabel *_statusText;
 
 	void ReLogin();

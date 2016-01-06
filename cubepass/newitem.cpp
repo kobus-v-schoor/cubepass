@@ -77,13 +77,12 @@ void NewItem::on_btnCreate_clicked()
 		_datFile.ChangeVarValue(_username, "Items", _items);
 
 		_datFile.CreateVar(sectionName, "Category", ui->cmbCategory->currentText().toStdString());
-        _datFile.CreateVar(sectionName, "Username", cube::strEncrypt(ui->edtUsername->text().toStdString(),
-																	 _password));
-        _datFile.CreateVar(sectionName, "Password", cube::strEncrypt(ui->edtPassword->text().toStdString(),
+        _datFile.CreateVar(sectionName, "Username", ui->edtUsername->text().toStdString());
+        _datFile.CreateVar(sectionName, "Password", dchain::strEncrypt(ui->edtPassword->text().toStdString(),
 																	 _password));
 		if (!ui->edtNotes->toPlainText().isEmpty()){
 			ui->edtNotes->setPlainText(ui->edtNotes->toPlainText().replace("\n", "\\n", Qt::CaseSensitive));
-            _datFile.CreateVar(sectionName, "Notes", cube::strEncrypt(ui->edtNotes->toPlainText().toStdString(),
+            _datFile.CreateVar(sectionName, "Notes", dchain::strEncrypt(ui->edtNotes->toPlainText().toStdString(),
 																	  _password));
 		}
 		_datFile.ApplyChanges();

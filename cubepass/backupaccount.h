@@ -24,7 +24,7 @@ private slots:
 private:
 	Ui::BackupAccount *ui;
 	std::string _username;
-	cube::dataBase _datFile;
+	nihdb::dataBase _datFile;
 };
 
 #endif // BACKUPACCOUNT_H

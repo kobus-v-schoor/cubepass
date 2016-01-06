@@ -7,6 +7,7 @@ LoginScreen::LoginScreen(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::LoginScreen),
 	_iniFile(SETTINGS_FILE),
+	_datB(DATABASE_FILE),
 	_loggedIn(false),
 	_settingINI(true)
 {
@@ -51,11 +52,35 @@ void LoginScreen::on_btnLogin_clicked()
 	std::string _compareStr = _iniFile.ReturnValue("Users", _username);
 	if (!_compareStr.empty())
 	{
-        _loggedIn = (cube::strDecrypt(_compareStr, _password) ==
-					 _password);
+        _loggedIn = (dchain::strDecrypt(_compareStr, _password) == _password);
 
-		if (_loggedIn)
+		if (_loggedIn) {
+			if (_iniFile.ReturnValue("Startup", "Version") != "4.0.0") {
+				_iniFile.ChangeProperty("Startup", "Version", "4.0.0");
+				std::vector<std::string> items;
+				std::string temp = _datB.ReturnVar(_username, "Items");
+				std::string temp2;
+				if (temp == "empty")
+					temp.clear();
+
+				for (int i = 0; i < temp.length(); i++) {
+					if (temp[i] == ';') {
+						temp2.insert(temp2.begin(), '/');
+						items.push_back(temp2);
+						temp2.clear();
+						continue;
+					}
+					temp2 += temp[i];
+				}
+
+				for (int i = 0; i < items.size(); i++)
+					_datB.ChangeVarValue(_username + items[i], "Username", dchain::strDecrypt(_datB.ReturnVar(_username + items[i], "Username"), _password));
+
+				_iniFile.ApplyChanges();
+				_datB.ApplyChanges();
+			}
 			this->close();
+		}
 		else
 		{
 			ui->lblWarning->setText("Decrypting...");

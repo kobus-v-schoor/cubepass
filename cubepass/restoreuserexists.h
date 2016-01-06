@@ -26,7 +26,7 @@ private slots:
 
 private:
 	Ui::RestoreUserExists *ui;
-	cube::dataBase _datFile;
+	nihdb::dataBase _datFile;
 	bool _changed;
 	bool _replace;
 	std::string _newUsername;

@@ -32,7 +32,7 @@ void RestoreAccount::on_btnCancel_clicked()
 void RestoreAccount::on_btnRestore_clicked()
 {
 	std::string _filepath = ui->edtFilepath->text().toStdString();
-	cube::dataBase _backup(_filepath);
+	nihdb::dataBase _backup(_filepath);
 
 	if (!_backup.IsParsed()){
 		this->ShowError();

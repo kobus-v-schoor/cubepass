@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			CreateDataFiles();
 	}
 
-	cube::iniParser _iniFile(SETTINGS_FILE.c_str());
+	inip::iniParser _iniFile(SETTINGS_FILE.c_str());
 
 	if ((_iniFile.ReturnValue("Startup", "Version") == "2.0.0") && (VERSION != "2.0.0"))
 	{
@@ -81,8 +81,8 @@ void CreateDataFiles()
 	fileCreate.open(DATABASE_FILE.c_str());
 	fileCreate.close();
 
-	cube::iniParser _iniFile(SETTINGS_FILE);
-	cube::dataBase _datFile(DATABASE_FILE);
+	inip::iniParser _iniFile(SETTINGS_FILE);
+	nihdb::dataBase _datFile(DATABASE_FILE);
 
 	_iniFile.CreateSection("Startup");
 	_iniFile.AddProperty("Startup", "Version", VERSION);
